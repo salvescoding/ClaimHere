@@ -2,7 +2,7 @@ class CompaniesController < ApplicationController
   before_action :set_company
 
   def show
-   # @complaints = Complaints.all.where(company: self) # ??
+   @complaints = Complaint.all.where(company: @company)
    @complaint = Complaint.new
   end
 
