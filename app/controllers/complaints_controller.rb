@@ -40,7 +40,7 @@ class ComplaintsController < ApplicationController
   end
 
   def set_company
-    # @company = Company.find(params[:id])
+    @company = Company.find(params[:company_id])
   end
 
   def set_user

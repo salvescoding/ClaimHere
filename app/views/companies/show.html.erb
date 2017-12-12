@@ -1,2 +1,18 @@
-<h1>This is the company profile</h1>
-<p>It will have the company details and the complaints listed for this company</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <h1>This is the company profile</h1>
+      <p>It will have the company details and the complaints listed for this company</p>
+
+      <% @complaints.each do |complaint| %>
+      <p>
+        <%= complaint.title %>
+      </p>
+      <p>
+        <%= complaint.description %>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>
+

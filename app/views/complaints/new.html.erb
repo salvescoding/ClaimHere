@@ -1,2 +1,17 @@
-<h1>This is the creation of a complaint</h1>
-<p>It will have a form where the user can create a complaint</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <h1>Complain please...</h1>
+      <p>Please post your complaint</p>
+
+      <%= simple_form_for [@company, @complaint] do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :category %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
