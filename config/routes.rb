@@ -4,18 +4,15 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :users, only: [:edit, :update, :destroy]
+  get '/profile', to: 'users#show'
+
+  resources :complaints, only: [:index, :show, :edit, :update, :destroy]
 
   resources :companies do
-    resources :complaints, only: [:create, :destroy]
+    resources :complaints, only: [:new, :create]
   end
 
-  resources :complaints, only: [:index] do
-    member do
-      patch "solved", to: "complaints#solved"
-      patch "ongoing", to: "complaints#ongoing"
-      patch "unsolved", to: "complaints#unsolved"
-    end
-  end
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
