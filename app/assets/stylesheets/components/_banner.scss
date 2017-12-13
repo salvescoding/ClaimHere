@@ -1,0 +1,66 @@
+.banner {
+  color: black;
+  text-align: center;
+  height: 80vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: black;
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.register{
+  padding-top: 141px;
+  padding-bottom: 141px;
+  position: relative;
+}
+.row {
+  max-width: 1220px;
+  margin: 100px auto;
+  padding: 0 40px;
+}
+.register .container {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.register .content {
+  flex: 4 1;
+}
+.register .divider-wrapper {
+  flex: 1 1;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+}
+.form-control{
+  padding: 25px;
+}
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+  border-right:0;
+  box-shadow:0 0 0;
+  border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+.container h2 {
+  text-align: center;
+  margin: 50px 0px;
+}

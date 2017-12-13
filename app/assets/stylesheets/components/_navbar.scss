@@ -22,6 +22,16 @@
   border-radius: 50%;
 }
 
+.navbar-wagon-fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  margin: 15px 360px;
+}
+
 /* Right section */
 .navbar-wagon-right {
   display: flex;
