@@ -1,4 +1,22 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+
+
+
+  def after_sign_in_path_for(resource)
+    #hash = JSON.parse(cookies[:complaint])
+    if cookies[:complaint]
+     arguments = JSON.parse(cookies[:complaint])
+     complaint = Complaint.new(arguments)
+     complaint.user = current_user
+     complaint.company_id = cookies[:company_id]
+     complaint.save!
+     cookies.delete(:complaint)
+   end
+    company_id = cookies[:company_id]
+    company_path(company_id)
+  end
+
+
 end

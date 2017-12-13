@@ -3,7 +3,6 @@ class CompaniesController < ApplicationController
 
   def show
    @complaints = Complaint.all.where(company: @company)
-   @complaint = Complaint.new
   end
 
 
