@@ -1,2 +1,32 @@
-<h1>Welcome to ClaimHere</h1>
-<p>It will have the banner, last claims listed, best companies based on stats</p>
+
+<div class="banner" style="background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/geometry.png);">
+  <div class="banner-content">
+    <section class="register" >
+      <div class="row">
+        <div class="col-xs-5">
+          <%= render partial: "shared/banner/banner_left" %>
+        </div>
+        <div class="col-xs-2">
+          <div class="divider-wrapper">
+            <div class="divider"></div>
+          </div>
+        </div>
+        <div class="col-xs-5">
+        <%= render partial: "shared/banner/banner_right" %>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+<div class="container cardcontainer">
+  <div class="row">
+  <h2>Best companies</h2>
+    <% 8.times do %>
+    <div class="cardbox col-xs-12 col-sm-3">
+      <%= render partial: "shared/cards/card" %>
+    </div>
+    <% end %>
+  </div>
+</div>

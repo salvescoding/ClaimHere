@@ -1,2 +1,21 @@
 <h1>This is the edit user profile</h1>
 <p>It will have a form for the user to update their details</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <h2>Edit your profile</h2>
+
+      <%= simple_form_for(@user) do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :city %>
+      <%= f.input :phone_number %>
+      <%= f.input :photo, as: :attachinary %>
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
