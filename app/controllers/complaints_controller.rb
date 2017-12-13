@@ -1,6 +1,7 @@
 class ComplaintsController < ApplicationController
   before_action :set_company
   before_action :set_user
+  skip_before_action :authenticate_user!, only: [:new, :create]
 
   def show
     @complaint = Complaint.find(params[:id])
@@ -11,14 +12,16 @@ class ComplaintsController < ApplicationController
   end
 
   def create
+    cookies[:company_id] = @company.id
+    cookies[:complaint] = complaint_params.to_json
+
     if !current_user
       redirect_to new_user_registration_path
-    end
+    else
       @complaint = Complaint.new(complaint_params)
       @complaint.user = current_user
       @complaint.company = @company
       @complaint.save
-    if @complaint.save
       redirect_to company_path(@company)
     end
   end

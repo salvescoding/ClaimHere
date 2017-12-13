@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.3.5'
 
+
+
+gem 'bootstrap-sass'
+gem 'sass-rails'
 gem 'jquery-rails'
 gem 'devise'
 gem 'figaro'

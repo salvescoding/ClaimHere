@@ -1,5 +1,5 @@
 //= require rails-ujs
-//= jquery
-//= bootstrap-sprockets
+//= require jquery
+//= require bootstrap-sprockets
 //= require_tree .
 
