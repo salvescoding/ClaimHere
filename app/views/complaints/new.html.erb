@@ -4,7 +4,9 @@
       <h1>Complain please...</h1>
       <p>Please post your complaint</p>
       <%= simple_form_for [@company, @complaint] do |f| %>
+        <% if !@company %>
         <%= f.input :company_id, collection: @companies, as: :select %>
+        <% end %>
         <%= f.input :title %>
         <%= f.input :description, as: :text %>
         <%= f.input :category, collection: @categories, as: :select %>
