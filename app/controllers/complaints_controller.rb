@@ -11,20 +11,21 @@ class ComplaintsController < ApplicationController
   def new
     @complaint = Complaint.new
     @companies = Company.all
+    @categories = ["Telecomunications", "Retail", "Airline"]
+    @rating = (1..5)
   end
 
   def create
-    cookies[:company_id] = @company.id
-    cookies[:complaint] = complaint_params.to_json
-
     if !current_user
+      cookies[:company_id] = @company.id
+      cookies[:complaint] = complaint_params.to_json
       redirect_to new_user_registration_path
     else
       @complaint = Complaint.new(complaint_params)
       @complaint.user = current_user
       @complaint.company = @company
       @complaint.save
-      redirect_to company_path(@company)
+      redirect_to company_path(params[:complaint][:company_id])
     end
   end
 
@@ -41,7 +42,7 @@ class ComplaintsController < ApplicationController
   private
 
   def complaint_params
-    params.require(:complaint).permit(:title, :description, :status, :category, :photo)
+    params.require(:complaint).permit(:company_id, :title, :description, :status, :company_rating, :category, :photo)
   end
 
   def set_company
