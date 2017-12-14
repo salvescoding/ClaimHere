@@ -1,14 +1,14 @@
 <div class="reputationco">
 <h4>See a company's reputation here: </h4>
 <br>
-<div class="input-group stylish-input-group">
-  <input type="text" class="form-control"  placeholder="Type a company" >
-  <span class="input-group-addon">
-    <button type="submit">
-        <span class="glyphicon glyphicon-search"></span>
-    </button>
-  </span>
-</div>
+
+
+
+<form action="<%= companies_path %>">
+  <input type="text" name="query">
+  <input type="submit">
+</form>
+
 </div>
 <br>
 <br>

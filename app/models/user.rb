@@ -31,4 +31,12 @@ class User < ApplicationRecord
     return user
   end
 
+  def self.company(search)
+   if search
+      Company.find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      Company.find(:all)
+    end
+  end
+
 end
