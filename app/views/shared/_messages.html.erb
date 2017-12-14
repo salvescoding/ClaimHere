@@ -1,20 +1,36 @@
-<div class="message">
-  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-  <div class="message-name">
-    <h3>
-      <%= @complaint %>
-      render
+<div class="messages-show-company">
+  <% @complaints.each do |complaint| %>
+  <%= link_to complaint_path(complaint) do %>
+  <div class="message">
+    <% if complaint.company_rating == 1 %>
+    <%= image_tag("angry"), class: "avatar-large" %>
+    <% elsif complaint.company_rating == 2 %>
+    <%= image_tag("crying"), class: "avatar-large" %>
+    <% elsif complaint.company_rating == 3 %>
+    <%= image_tag("Ok"), class: "avatar-large" %>
+    <% elsif complaint.company_rating == 4 %>
+    <%= image_tag("Good"), class: "avatar-large" %>
+    <% elsif complaint.company_rating == 5 %>
+    <%= image_tag("InLove"), class: "avatar-large" %>
+    <% end %>
+    <div class="message-name">
+     <h3>
+      <%= complaint.user.email %>
     </h3>
-    <p>10/07/17</p>
+    <p>
+      <%= complaint.created_at %>
+    </p>
   </div>
   <div class="message-body">
-    <p><strong>I am not sure yet!</strong></p>
+    <p><strong><%= complaint.category %></strong></p>
     <p>
-      I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+      <%= complaint.description %>
     </p>
   </div>
   <div class="message-status">
-    <p class="status pending">Pending</p>
-    <p class="price">€345</p>
+    <p class="status pending">Unsolved</p>
   </div>
+</div>
+<% end %>
+<% end %>
 </div>
