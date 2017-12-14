@@ -3,6 +3,7 @@ class ComplaintsController < ApplicationController
   before_action :set_user
   skip_before_action :authenticate_user!, only: [:new, :create]
 
+
   def show
     @complaint = Complaint.find(params[:id])
   end
