@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update, :destroy]
   get '/profile', to: 'users#show'
 
-  resources :complaints, only: [:index, :show, :edit, :update, :destroy]
+  resources :complaints, only: [:new, :create, :index, :show, :edit, :update, :destroy]
 
   resources :companies do
     resources :complaints, only: [:new, :create]
