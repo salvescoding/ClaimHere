@@ -9,6 +9,7 @@ class ComplaintsController < ApplicationController
 
   def new
     @complaint = Complaint.new
+    @companies = Company.all
   end
 
   def create
@@ -43,7 +44,9 @@ class ComplaintsController < ApplicationController
   end
 
   def set_company
-    @company = Company.find(params[:company_id])
+    if params[:company_id]
+      @company = Company.find(params[:company_id])
+    end
   end
 
   def set_user
