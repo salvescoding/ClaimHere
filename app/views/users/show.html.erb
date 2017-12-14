@@ -1,6 +1,47 @@
-<h1>This is the user profile</h1>
-<p>We have user details and user complaints listed with the status</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1>This is the profile page</h1>
+      <%= link_to "Edit my profile", edit_user_path(@user), class: "btn btn-primary" %>
 
-<%= render 'shared/messages' %>
+    </div>
+  </div>
+</div>
 
-<p>The user will be able to see the impact they have with their complaints. Complaints made: 1.345, Complaints responded/solved: 34%, </p>
+<div class="complaints-show">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2 class="text-center">My Complaints</h2>
+          <div class="messages-show-company">
+
+        <% @complaints.each do |complaint| %>
+        <%= link_to complaint_path(complaint) do %>
+        <div class="message">
+          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+          <div class="message-name">
+            <h3>
+              <%= complaint.user.email %>
+            </h3>
+            <p>
+              <%= complaint.created_at %>
+            </p>
+          </div>
+          <div class="message-body">
+            <p><strong><%= complaint.category %></strong></p>
+            <p>
+              <%= complaint.description %>
+            </p>
+          </div>
+          <div class="message-status">
+            <p class="status pending">Unsolved</p>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
