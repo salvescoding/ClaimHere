@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
 
 
   def after_sign_in_path_for(resource)
-    #hash = JSON.parse(cookies[:complaint])
     if cookies[:complaint]
      arguments = JSON.parse(cookies[:complaint])
      complaint = Complaint.new(arguments)
@@ -13,9 +12,11 @@ class ApplicationController < ActionController::Base
      complaint.company_id = cookies[:company_id]
      complaint.save!
      cookies.delete(:complaint)
+     company_id = cookies[:company_id]
+     company_path(company_id)
+   else
+     root_path
    end
-    company_id = cookies[:company_id]
-    company_path(company_id)
   end
 
 

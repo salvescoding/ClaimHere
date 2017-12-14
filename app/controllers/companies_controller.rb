@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :set_company
+  skip_before_action :authenticate_user!, only: [:show]
 
   def show
    @complaints = Complaint.all.where(company: @company)
