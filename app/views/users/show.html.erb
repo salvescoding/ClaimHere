@@ -1,63 +1,18 @@
-<div class="container">
+<div class="container profile-container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1>This is the profile page</h1>
-      <%= link_to "Edit my profile", edit_user_path(@user), class: "btn btn-primary" %>
-
+    <div class="col-lg-3">
+      <%= render partial: 'shared/cards/profile_card' %>
     </div>
-  </div>
-</div>
-
-<div class="complaints-show">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
-        <h2 class="text-center">My Complaints</h2>
-
-        <% @complaints.each do |complaint| %>
-        <div class="messages-show-company">
-            <%= link_to complaint_path(complaint) do %>
-            <div class="message">
-
-                <% if complaint.company_rating == 1 %>
-                  <%= image_tag("angry", width: '30' )  %>
-                <% elsif complaint.company_rating == 2 %>
-                  <%= image_tag("crying", width: '30') %>
-                <% elsif complaint.company_rating == 3 %>
-                  <%= image_tag("Ok", width: '30') %>
-                <% elsif complaint.company_rating == 4 %>
-                  <%= image_tag("Good", width: '30') %>
-                <% elsif complaint.company_rating == 5 %>
-                  <%= image_tag("InLove", width: '30') %>
-
-
-
-              <% else %>
-              <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-              <% end %>
-              <div class="message-name">
-               <h3>
-                <%= complaint.user.email %>
-              </h3>
-              <p>
-                <%= complaint.created_at %>
-              </p>
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="profile-right">
+          <h3>My complaints</h3>
+          <% @complaints.each do |complaint| %>
+            <div class="col-lg-12">
+              <%= render partial: "shared/complaint", locals: { complaint: complaint } %>
             </div>
-            <div class="message-body">
-              <p><strong><%= complaint.category %></strong></p>
-              <p>
-                <%= complaint.description %>
-              </p>
-            </div>
-            <div class="message-status">
-              <p class="status pending">Unsolved</p>
-            </div>
-          </div>
+          <% end %>
         </div>
-          <% end %>
-          <% end %>
-
-
       </div>
     </div>
   </div>

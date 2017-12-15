@@ -1,0 +1,26 @@
+.profile-card{
+  border: 2px solid lightgrey;
+  padding: 40px;
+  margin: 20px 0px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+  h2 {
+    margin-top: 10px;
+  }
+}
+.profile-container {
+  padding-top: 100px;
+  margin-top: 100px;
+  padding-bottom: 200px;
+}
+.profile-right {
+  margin-left: 50px;
+  h3 {
+    text-align: center;
+  }
+}
+.users-show {
+  background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/witewall_3.png)
+
+}
