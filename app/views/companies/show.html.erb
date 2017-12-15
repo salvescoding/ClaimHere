@@ -60,7 +60,9 @@
         </div>
         <!-- tab content end -->
       </div>
-      <%= link_to 'Complain now!', new_company_complaint_path(@company), class: "btn btn-danger" %>
+        <div class="text-center complaint-button">
+          <%= link_to 'Complain now', new_company_complaint_path(@company), class: "btn-complaint" %>
+        </div>
     </div>
   </div>
 </div>
