@@ -5,8 +5,8 @@
 
 
 <form action="<%= companies_path %>">
-  <input type="text" name="query">
-  <input type="submit">
+  <input type="text" name="query" id="form-search" placeholder=" Search for the company...">
+  <input type="submit" class="btn-claim">
 </form>
 
 </div>
@@ -17,6 +17,6 @@
 <h4>Start a complaint here: </h4>
 <br>
 <div class="start-complaint">
-  <%= link_to "Start a complaint", new_complaint_path, class: "btn btn-primary btn-lg" %>
+  <%= link_to "Start a complaint", new_complaint_path, class: "btn-claim btn-lg" %>
 </div>
 </div>

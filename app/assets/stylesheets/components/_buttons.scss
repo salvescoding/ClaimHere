@@ -1,0 +1,49 @@
+ .btn-claim {
+  /*background: #2c3e50;   fallback for old browsers */
+ /*background: -webkit-linear-gradient(to right, #3498db, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
+ /*background: linear-gradient(to right, #3498db, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: linear-gradient(to right,  #2c3e50 0%, #3498db 100%);
+  transition: 0.4s;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 40px;
+  text-decoration: none;
+  box-shadow: 0 0 20px #eee;
+  text-align: center;
+  flex: 1 1 auto;
+  background-size: 200% auto;
+}
+.btn-claim:hover {
+  color: white;
+  text-decoration: none;
+  background-position: right center;
+}
+
+ .btn-complaint {
+// background: #ee0979;  /* fallback for old browsers */
+// background: -webkit-linear-gradient(to left, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
+// background: linear-gradient(to left, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-image: linear-gradient(to left,  #ff6a00 0%, #ee0979 100%);
+  transition: 0.4s;
+  color: white;
+  padding: 10px 20px;
+  margin: 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  box-shadow: 0 0 20px #eee;
+  text-align: center;
+  flex: 1 1 auto;
+  background-size: 200% auto;
+}
+
+.btn-complaint:hover {
+  color: white;
+  text-decoration: none;
+  background-position: right center;
+}
+
+.complaint-button {
+  margin-bottom: 50px;
+}
