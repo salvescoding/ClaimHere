@@ -6,6 +6,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+    .row {
+    max-width: 1220px;
+    margin: 100px auto;
+    padding: 0 40px;
+  }
 }
 
 .banner h1 {
@@ -26,11 +31,7 @@
   padding-bottom: 141px;
   position: relative;
 }
-.row {
-  max-width: 1220px;
-  margin: 100px auto;
-  padding: 0 40px;
-}
+
 .register .container {
   overflow: hidden;
   display: flex;
