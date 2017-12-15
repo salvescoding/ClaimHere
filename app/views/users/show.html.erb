@@ -9,7 +9,7 @@
           <h3>My complaints</h3>
           <% @complaints.each do |complaint| %>
             <div class="col-lg-12">
-              <%= render partial: "shared/complaint", locals: { complaint: complaint } %>
+              <%= render partial: "shared/messages", locals: { complaint: complaint } %>
             </div>
           <% end %>
         </div>
