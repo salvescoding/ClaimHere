@@ -20,12 +20,16 @@
   background-position: right center;
 }
 
- .btn-complaint {
-// background: #ee0979;  /* fallback for old browsers */
-// background: -webkit-linear-gradient(to left, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
-// background: linear-gradient(to left, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.btn-full {
+  width: 100%;
+}
 
-  background-image: linear-gradient(to left,  #ff6a00 0%, #ee0979 100%);
+ .btn-complaint {
+// background: #cb2d3e;  /* fallback for old browsers */
+// background: -webkit-linear-gradient(to left, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+// background: linear-gradient(to left, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-image: linear-gradient(to left,  #ef473a 0%, #cb2d3e 100%);
   transition: 0.4s;
   color: white;
   padding: 10px 20px;
@@ -46,4 +50,5 @@
 
 .complaint-button {
   margin-bottom: 50px;
+  width: 100%;
 }

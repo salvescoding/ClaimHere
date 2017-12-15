@@ -1,8 +1,7 @@
-<div class="container">
+<div class="container container-complaint">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <h1>Complain please...</h1>
-      <p>Please post your complaint</p>
       <%= simple_form_for [@company, @complaint] do |f| %>
         <% if !@company %>
         <%= f.input :company_id, collection: @companies, as: :select %>
@@ -12,7 +11,7 @@
         <%= f.input :category, collection: @categories, as: :select %>
         <%= f.input :company_rating, :collection => 1..5 %>
         <%= f.input :photo, as: :attachinary %>
-        <%= f.button :submit, class: "btn-claim" %>
+        <%= f.button :submit, class: "btn-claim btn-full" %>
       <% end %>
     </div>
   </div>
