@@ -25,19 +25,19 @@ class ComplaintsController < ApplicationController
       @complaint.user = current_user
 
       if params[:complaint][:company_id]
-       @complaint.company_id = params[:complaint][:company_id]
-       @complaint.save
-      redirect_to company_path(params[:complaint][:company_id])
-
-      elsif params[:company_id]
-        @complaint.company_id = params[:company_id]
+        @complaint.company_id = params[:complaint][:company_id]
         @complaint.save
+        redirect_to company_path(params[:complaint][:company_id])
+
+       elsif params[:company_id]
+         @complaint.company_id = params[:company_id]
+         @complaint.save
         redirect_to company_path(params[:company_id])
-      else
-        render :new
-        flash[:notice] = "We could not save your complaint!"
-      end
-    end
+       else
+         render :new
+         flash[:notice] = "We could not save your complaint!"
+       end
+     end
   end
 
   def update

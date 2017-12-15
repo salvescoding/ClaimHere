@@ -75,12 +75,29 @@
       <div class="col-lg-8 col-lg-offset-2">
         <h2 class="text-center">Last Complaints</h2>
 
+          <% @complaints.each do |complaint| %>
         <div class="messages-show-company">
-          <% @complaints.each do |complaint|  %>
-          <div class="message">
-            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-            <div class="message-name">
-              <h3>
+            <%= link_to complaint_path(complaint) do %>
+            <div class="message">
+
+                <% if complaint.company_rating == 1 %>
+                  <%= image_tag("angry", width: '30' )  %>
+                <% elsif complaint.company_rating == 2 %>
+                  <%= image_tag("crying", width: '30') %>
+                <% elsif complaint.company_rating == 3 %>
+                  <%= image_tag("Ok", width: '30') %>
+                <% elsif complaint.company_rating == 4 %>
+                  <%= image_tag("Good", width: '30') %>
+                <% elsif complaint.company_rating == 5 %>
+                  <%= image_tag("InLove", width: '30') %>
+
+
+
+              <% else %>
+              <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+              <% end %>
+              <div class="message-name">
+               <h3>
                 <%= complaint.user.email %>
               </h3>
               <p>
@@ -95,11 +112,12 @@
             </div>
             <div class="message-status">
               <p class="status pending">Unsolved</p>
-              <p> <%= complaint.company_rating %></p>
             </div>
           </div>
-          <% end %>
         </div>
+          <% end %>
+          <% end %>
+
 
       </div>
     </div>
