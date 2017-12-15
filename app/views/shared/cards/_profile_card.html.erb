@@ -5,8 +5,10 @@
   <h2>Profile</h2>
   <% end %>
 
+  <div class="text-center">
      <% avatar_url = current_user.facebook_picture_url || current_user.photo || image_path("profile") %>
      <%= image_tag avatar_url, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+   </div>
 
   <br>
   <br>
@@ -16,4 +18,7 @@
   <p>Complaints solved: 55%</p>
 
     <%= link_to "Edit my profile", edit_user_path(@user), class: "btn-claim" %>
+<br>
+<br>
+
 </div>
