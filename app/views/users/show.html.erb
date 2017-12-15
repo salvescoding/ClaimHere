@@ -6,7 +6,6 @@
     <div class="col-lg-9">
       <div class="row">
         <div class="profile-right">
-          <h3>My complaints</h3>
           <% @complaints.each do |complaint| %>
             <div class="col-lg-12">
               <%= render partial: "shared/messages", locals: { complaint: complaint } %>

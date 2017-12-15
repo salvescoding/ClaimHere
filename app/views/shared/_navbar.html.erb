@@ -14,7 +14,7 @@
 
       <!-- Links when logged in -->
 
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -26,8 +26,8 @@
               <%= link_to "My Profile", profile_path %>
             </li>
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+              <%= link_to edit_user_path(current_user) do %>
+                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Edit") %>
               <% end %>
             </li>
             <li>
