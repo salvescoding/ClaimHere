@@ -30,5 +30,18 @@
     <% end %>
   </div>
 </div>
-
+<div class="banner" style="background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/geometry.png);">
+  <div class="container">
+    <h2>Last complaints</h2>
+    <div class="row">
+      <div class="profile-right">
+        <% @complaints.each do |complaint| %>
+          <div class="col-lg-6">
+            <%= render partial: "shared/messages", locals: { complaint: complaint } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
