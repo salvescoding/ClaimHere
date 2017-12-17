@@ -18,12 +18,12 @@ class ComplaintsController < ApplicationController
 
   def create
     if !current_user
-      if !@company.id.nil?
-        cookies[:company_id] = @company.id
+      unless @company
+        cookies[:company_id] = params[:complaint][:company_id]
         cookies[:complaint] = complaint_params.to_json
         redirect_to new_user_registration_path
       else
-        cookies[:company_id] = params[:complaint][:company_id]
+        cookies[:company_id] = @company.id
         cookies[:complaint] = complaint_params.to_json
         redirect_to new_user_registration_path
       end
