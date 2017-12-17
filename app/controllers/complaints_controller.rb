@@ -6,6 +6,7 @@ class ComplaintsController < ApplicationController
 
   def show
     @complaint = Complaint.find(params[:id])
+
   end
 
   def new
@@ -17,30 +18,37 @@ class ComplaintsController < ApplicationController
 
   def create
     if !current_user
-      cookies[:company_id] = @company.id
-      cookies[:complaint] = complaint_params.to_json
-      redirect_to new_user_registration_path
+      if !@company.id.nil?
+        cookies[:company_id] = @company.id
+        cookies[:complaint] = complaint_params.to_json
+        redirect_to new_user_registration_path
+      else
+        cookies[:company_id] = params[:complaint][:company_id]
+        cookies[:complaint] = complaint_params.to_json
+        redirect_to new_user_registration_path
+      end
     else
       @complaint = Complaint.new(complaint_params)
       @complaint.user = current_user
 
-      if params[:complaint][:company_id]
+      if !params[:complaint][:company_id].nil?
         @complaint.company_id = params[:complaint][:company_id]
         @complaint.save
         redirect_to company_path(params[:complaint][:company_id])
 
-       elsif params[:company_id]
+      elsif !params[:company_id].nil?
          @complaint.company_id = params[:company_id]
          @complaint.save
         redirect_to company_path(params[:company_id])
-       else
+      else
          render :new
          flash[:notice] = "We could not save your complaint!"
-       end
-     end
+      end
+    end
   end
 
   def update
+    raise
     @complaint.update(complaint_params)
     redirect_to profile_path
   end
@@ -53,7 +61,7 @@ class ComplaintsController < ApplicationController
   private
 
   def complaint_params
-    params.require(:complaint).permit(:company_id, :title, :description, :status, :company_rating, :category, :photo)
+    params.require(:complaint).permit(:company_id, :title, :description, :status, :company_rating, :category, :photo, :response)
   end
 
   def set_company

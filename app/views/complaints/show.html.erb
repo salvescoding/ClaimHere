@@ -1,20 +1,39 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1>This is the complaint page</h1>
-      <div class="message">
-          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-          <div class="message-name">
-            <h3>
-              <%= @complaint.user.email %>
-            </h3>
-            <p>
-              <%= @complaint.created_at %>
-            </p>
-          </div>
-          <div class="message-body">
-            <p><strong><%= @complaint.category %></strong></p>
-            <p>
+  <div style="background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/geometry.png);">
+
+    <div class="container">
+      <div class="complaint-show-page">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+          <div class="message">
+            <% if @complaint.company_rating == 1 %>
+            <%= image_tag("angry", width: '30' )  %>
+            <% elsif @complaint.company_rating == 2 %>
+            <%= image_tag("crying", width: '30') %>
+            <% elsif @complaint.company_rating == 3 %>
+            <%= image_tag("Ok", width: '30') %>
+            <% elsif @complaint.company_rating == 4 %>
+            <%= image_tag("Good", width: '30') %>
+            <% elsif @complaint.company_rating == 5 %>
+            <%= image_tag("InLove", width: '30') %>
+            <% else %>
+            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+            <% end %>
+            <div class="message-name">
+              <h4>
+                <% if @complaint.company_rating %>
+                Rating: <strong><%= @complaint.company_rating %></strong>
+                <% end %>
+              </h4>
+              <p>
+                <%= @complaint.created_at.strftime("%d-%m-%Y") %>
+              </p>
+            </div>
+            <div class="message-body">
+              <p class="message-title">
+                <strong>
+                  <%= @complaint.company.name %>
+                </strong>
+              </p>
               <%= @complaint.description %>
             </p>
           </div>
@@ -22,7 +41,17 @@
             <p class="status pending">Unsolved</p>
           </div>
         </div>
-
+        <div class="message-body">
+          <p> <%= @complaint.response %> </p>
+        </div>
+        <%=  simple_form_for @complaint do |f| %>
+        <%= f.input :response, as: :text %>
+        <%= f.button :submit, class: "btn-claim btn-full" %>
+        <% end %>
+      </div>
     </div>
   </div>
+
+  </div>
 </div>
+
