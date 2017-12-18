@@ -8,26 +8,17 @@ class CompaniesController < ApplicationController
 
   def find
     @company = Company.find_by(domain: params[:domain])
-    if params[:domain]
+
+    if Company.find_by(domain: params[:domain])
       redirect_to company_path(@company)
     else
-
+      render :find
     end
 
   end
 
    def index
-    if params[:query]
-     @companies = Company.where(name: params[:query].capitalize)
-     if @companies.any?
-      redirect_to company_path(@companies.first)
-     else
-      flash[:alert] = "This company does not exist"
-      redirect_to root_path
-     end
-     else
 
-     end
    end
 
   private

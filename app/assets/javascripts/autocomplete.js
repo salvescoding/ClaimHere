@@ -27,7 +27,7 @@ function search(event) {
             let name = d.name;
             let domain = d.domain;
             let logo = d.logo;
-            const item = `<div class='item'><img src='${logo}' class='avatar-logo'><a href='/find_company?domain=${domain}'>${name}</a></div>`;
+            const item = `<div class='item'><img src='${logo}' class='avatar-logo'><a href='/find_company?domain=${domain}'>  ${name}</a></div>`;
             results.insertAdjacentHTML("afterbegin", item);
           });
         });
