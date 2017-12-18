@@ -39,4 +39,7 @@ class User < ApplicationRecord
     end
   end
 
+  def complaints_submitted
+    complaints.count
+  end
 end
