@@ -1,9 +1,13 @@
 class CompaniesController < ApplicationController
   before_action :set_company, except: [:index]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :find]
 
   def show
    @complaints = Complaint.all.where(company: @company)
+  end
+
+  def find
+
   end
 
    def index
