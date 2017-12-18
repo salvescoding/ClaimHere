@@ -1,0 +1,44 @@
+<div class="profile-card">
+
+  <h2><%= @company.name %></h2>
+
+  <div class="text-center comp-emoji">
+    <% if @company.company_rating == 1 %>
+    <%= image_tag("angry", width: '80' )  %>
+    <p>Not recommended</p>
+    <% elsif @company.company_rating == 2 %>
+    <%= image_tag("crying", width: '80') %>
+    <p>Not recommended</p>
+    <% elsif @company.company_rating == 3 %>
+    <%= image_tag("Ok", width: '80') %>
+    <p>Regular</p>
+    <% elsif @company.company_rating == 4 %>
+    <%= image_tag("Good", width: '80') %>
+    <p>Recommended</p>
+    <% elsif @company.company_rating == 5 %>
+    <%= image_tag("InLove", width: '80') %>
+    <p>Very recommended</p>
+    <% else %>
+    <img class="avatar-large" src="https://www.reclameaqui.com.br/images/icons/sem-indice.efce97d7.png">
+    <p>Not rated</p>
+    <% end %>
+  </div>
+  <br>
+  <br>
+  <% if @company.company_rating.present? %>
+  <p>Overall company rating: <%= @company.company_rating %> / 5</p>
+  <% end %>
+  <p>Complaints received: <%= @company.complaints_received %></p>
+  <p>Complaints answered: 1.790</p>
+  <p>Complaints solved: 55%</p>
+
+  <br>
+  <br>
+
+  <div class="text-center complaint-button">
+    <%= link_to 'Complain now', new_company_complaint_path(@company), class: "btn-complaint btn-lg" %>
+  </div>
+<br>
+<br>
+
+</div>

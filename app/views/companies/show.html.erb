@@ -1,86 +1,20 @@
-<div class="reputation">
+<div class="padding">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
-        <h1 class="text-center">
-          <%= @company.name %>
-        </h1>
-
-        <div class="box">
-          <div class="row">
-            <div class="col-lg-12">
-              <!-- tabs -->
-              <ul class="list-inline tabs-dates">
-                <li>
-                  <a href="#" data-target="tab-1">Tabs</a>
-                </li>
-                <li>
-                  <a href="#" data-target="tab-1">Tabs</a>
-                </li>
-                <li>
-                  <a href="#" data-target="tab-1">Tabs</a>
-                </li>
-                <li>
-                  <a href="#" data-target="tab-1">Tabs</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- tab content -->
-          <div class="row tab-content">
-            <div class="col-lg-3 col-xs-12" id="emoji">
-              <%= image_tag "profile", class: "avatar-emoji" %>
-              <p>Very recommended</p>
-            </div>
-            <div class="col-lg-9 col-xs-12" id="stats">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus rerum quia fuga quisquam alias maxime eaque, debitis, facere cumque quo unde odio.
-            </div>
-          </div>
-          <div class="row results-box">
-            <div class="col-lg-12">
-             <ul class="list-inline">
-              <li>
-                <p>
-                  Complaints: 2130
-                </p>
-              </li>
-              <li>
-                <p>
-                  Complaints replied: 230
-                </p>
-              </li>
-              <li>
-                <p>
-                  Average reply: 24 hours
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- tab content end -->
+      <div class="col-lg-4">
+        <%= render partial: 'shared/cards/profile_company_card' %>
       </div>
-        <div class="text-center complaint-button">
-          <%= link_to 'Complain now', new_company_complaint_path(@company), class: "btn-complaint btn-lg" %>
+
+      <div class="col-lg-8">
+        <div class="row">
+        <h3 class="text-center">Last Complaints for <%= @company.name %></h3>
+          <div class="section2">
+            <% @complaints.each do |complaint| %>
+              <%= render partial: 'shared/messages', locals: { complaint: complaint } %>
+            <% end %>
+          </div>
         </div>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="complaints-show">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
-        <h2 class="text-center">Last Complaints</h2>
-
-          <% @complaints.each do |complaint| %>
-            <%= render partial: 'shared/messages', locals: { complaint: complaint } %>
-          <% end %>
       </div>
     </div>
   </div>
 </div>
-<!-- Complaints messages -->
-
-

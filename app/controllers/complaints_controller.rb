@@ -6,7 +6,6 @@ class ComplaintsController < ApplicationController
 
   def show
     @complaint = Complaint.find(params[:id])
-
   end
 
   def new
@@ -48,7 +47,6 @@ class ComplaintsController < ApplicationController
   end
 
   def update
-    raise
     @complaint.update(complaint_params)
     redirect_to profile_path
   end
@@ -57,6 +55,19 @@ class ComplaintsController < ApplicationController
     @complaint.destroy
   end
 
+  def marksolved
+    @complaint = Complaint.find(params[:id].to_i)
+    @complaint.update(status: 1)
+    @company = @complaint.company
+    redirect_to profile_path
+  end
+
+  def markunsolved
+    @complaint = Complaint.find(params[:id].to_i)
+    @complaint.update(status: 2)
+    @company = @complaint.company
+    redirect_to profile_path
+  end
 
   private
 
