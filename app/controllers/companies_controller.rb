@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_action :set_company, except: [:index]
+  before_action :set_company, except: [:index, :find]
   skip_before_action :authenticate_user!, only: [:index, :show, :find]
 
   def show
@@ -7,6 +7,12 @@ class CompaniesController < ApplicationController
   end
 
   def find
+    @company = Company.find_by(domain: params[:domain])
+    if params[:domain]
+      redirect_to company_path(@company)
+    else
+
+    end
 
   end
 
@@ -27,7 +33,7 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:company).permit(:name, :location, :category)
+    params.require(:company).permit(:name, :location, :category, :domain, :logo)
   end
 
   def set_company
