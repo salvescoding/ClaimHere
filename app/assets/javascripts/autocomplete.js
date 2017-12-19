@@ -13,20 +13,25 @@ function attachEvents() {
 }
 
 
+
+
 function search(event) {
     const input = event.target;
     const search = input.value;
+
+
 
     if (search.length > 1) {
         fetch(url + input.value)
         .then(response => response.json())
         .then((data) =>  {
           clear();
+          results.classList.remove('results-dropdown-transparent');
           data.forEach(function(d){
             let name = d.name;
             let domain = d.domain;
             let logo = d.logo;
-            const item = `<div class='item'><img src='${logo}' class='avatar-logo'><a href='/find_company?domain=${domain}&name=${name}&logo=${logo}'>  ${name}</a></div>`;
+            const item = `<li class='item'><img src='${logo}' class='avatar-logo'><a href='/find_company?domain=${domain}&name=${name}&logo=${logo}'>  ${name}</a></li>`;
             results.insertAdjacentHTML("afterbegin", item);
           });
         });
@@ -37,6 +42,7 @@ function search(event) {
 
 function clear() {
     document.getElementById('results').innerHTML = '';
+    results.classList.add('results-dropdown-transparent');
 }
 
 
