@@ -34,12 +34,26 @@
           <%= complaint.description.capitalize %>
         </p>
       </div>
-      <div class="message-status">
-        <% if complaint.status == "1" %>
-        <p>Solved</p>
-        <% else %>
-        <p>Unsolved</p>
-        <% end %>
+      <div class="message-status-button">
+
+
+    <% if complaint.status == "1" %>
+      <% status = "Solved" %>
+      <% statusclass = "denied" %>
+    <% else %>
+      <% status = "Unsolved" %>
+      <% statusclass = "accepted" %>
+    <% end %>
+    <h6 class=<%= statusclass %>><strong><%= status %></strong> </h6>
+
+    <div class="mark-button">
+      <% if complaint.status == "1" %>
+        <%= link_to "Mark as Not Solved", markunsolved_path(id: complaint), class:"btn btn-complaint" %>
+      <% else %>
+        <%= link_to "Mark as Solved", marksolved_path(id: complaint), class:"btn btn-claim" %>
+      <% end %>
+    </div>
+
       </div>
     </div>
     <% end %>

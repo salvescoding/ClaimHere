@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     resources :complaints, only: [:new, :create]
   end
 
+  get "marksolved", to: "complaints#marksolved"
+  get "markunsolved", to: "complaints#markunsolved"
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
