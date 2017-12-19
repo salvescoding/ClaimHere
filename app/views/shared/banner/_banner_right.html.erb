@@ -5,9 +5,10 @@
 
 
 <form action="<%= companies_path %>">
-  <input type="text" name="query" id="form-search" placeholder=" Search for the company...">
-  <input type="submit" class="btn-claim">
+  <input type="text" name="query" id="form-search" placeholder=" Search for the company" autocomplete="off">
 </form>
+  <div class="results-dropdown" id="results">
+  </div>
 
 </div>
 <br>

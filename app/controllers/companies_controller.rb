@@ -1,29 +1,30 @@
 class CompaniesController < ApplicationController
-  before_action :set_company, except: [:index]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_company, except: [:index, :find]
+  skip_before_action :authenticate_user!, only: [:index, :show, :find]
 
   def show
    @complaints = Complaint.all.where(company: @company)
   end
 
-   def index
-    if params[:query]
-     @companies = Company.where(name: params[:query].capitalize)
-     if @companies.any?
-      redirect_to company_path(@companies.first)
-     else
-      flash[:alert] = "This company does not exist"
-      redirect_to root_path
-     end
-     else
+  def find
+    @company = Company.new(name: params[:name], domain: params[:domain], logo: params[:logo])
+    @company.save
+    if Company.find_by(domain: params[:domain])
+      redirect_to company_path(@company)
+    else
+      render :root
+      flash[:notice] = "We could not find this company!"
+    end
+  end
 
-     end
+   def index
+
    end
 
   private
 
   def company_params
-    params.require(:company).permit(:name, :location, :category)
+    params.require(:company).permit(:name, :location, :domain, :logo)
   end
 
   def set_company
