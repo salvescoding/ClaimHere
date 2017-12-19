@@ -1,23 +1,27 @@
 <br>
-<div class="reputationco">
-<h4>See a company's reputation here: </h4>
-<br>
 
-
-<form action="<%= companies_path %>">
-  <input type="text" name="query" id="form-search" placeholder=" Search for the company" autocomplete="off">
-</form>
-  <div class="results-dropdown" id="results">
-  </div>
-
-</div>
-<br>
-<br>
-<br>
 <div class="complaint">
 <h4>Start a complaint here: </h4>
 <br>
 <div class="start-complaint">
   <%= link_to "Start a complaint", new_complaint_path, class: "btn-claim btn-lg" %>
 </div>
+</div>
+
+
+
+<br>
+<br>
+<br>
+
+
+
+<h4>See a company's reputation here: </h4>
+<br>
+  <div class="box-container">
+    <input type="text" name="query" id="form-search" placeholder=" Search..." autocomplete="off">
+  </div>
+  <div class="results-dropdown results-dropdown-transparent" id="results">
+
+
 </div>
