@@ -7,14 +7,14 @@ class CompaniesController < ApplicationController
   end
 
   def find
-    @company = Company.find_by(domain: params[:domain])
-
+    @company = Company.new(name: params[:name], domain: params[:domain], logo: params[:logo])
+    @company.save
     if Company.find_by(domain: params[:domain])
       redirect_to company_path(@company)
     else
-      render :find
+      render :root
+      flash[:notice] = "We could not find this company!"
     end
-
   end
 
    def index
@@ -24,7 +24,7 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:company).permit(:name, :location, :category, :domain, :logo)
+    params.require(:company).permit(:name, :location, :domain, :logo)
   end
 
   def set_company
