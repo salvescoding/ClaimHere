@@ -1,16 +1,17 @@
-<div class="padding">
+<div class="banner-tiny" style="background-image:url('<%= image_path "banner-background.jpeg" %>');"></div>
+
+<div class="padding-negative">
   <div class="container">
     <div class="row">
       <div class="col-lg-4">
         <%= render partial: 'shared/cards/profile_company_card' %>
       </div>
-  <div class="col-lg-1"></div>
-      <div class="col-lg-7 companycharts">
+      <div class="col-lg-8 companycharts">
         <%= render partial: 'shared/chartcompany' %>
 
       </div>
     </div>
-    <div class="row">
+    <div class="row last-complaints-company">
       <div class="col-lg-12">
         <div class="row">
         <h3 class="text-center">Last Complaints for <%= @company.name %></h3>

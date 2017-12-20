@@ -21,6 +21,16 @@
   padding: 20px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
 }
+.message-show {
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0px 0px 4px rgba(1,1,1,0.3);
+  margin: 20px 0;
+  border-radius: 10px;
+  img {
+    margin: 20px;
+  }
+}
 .message:last-child {
   border-bottom: none;
 }
@@ -57,6 +67,7 @@
 .message-status {
   font-size: 14px;
   font-weight: bold;
+  margin-top: 20px;
 }
 .status.accepted {
   color: #04A366;
@@ -68,12 +79,19 @@
   color: lightgrey;
 }
 .message-title {
-  font-size: 16px;
+  font-size: 18px;
+  a {
+  text-decoration: none;
+  color: #3f5b76;
+  }
 }
 .message-status-button {
 
 }
+.complaints-new {
+  background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/witewall_3.png)
 
+}
 
 
 
