@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+
   before_action :set_company, except: [:index, :find]
   skip_before_action :authenticate_user!, only: [:index, :show, :find]
 
@@ -8,12 +9,13 @@ class CompaniesController < ApplicationController
 
   def find
     @company = Company.new(name: params[:name], domain: params[:domain], logo: params[:logo])
-    @company.save
-    if Company.find_by(domain: params[:domain])
+
+    if !Company.find_by(domain: params[:domain])
+      @company.save
       redirect_to company_path(@company)
     else
-      render :root
-      flash[:notice] = "We could not find this company!"
+      company = Company.find_by(domain: params[:domain])
+      redirect_to company_path(company)
     end
   end
 

@@ -37,7 +37,7 @@
       labels: ["New customer claims", "Old customer claims"],
       datasets: [{
         label: '# of Votes',
-        data: [12, 19],
+        data: [<%= @company.complaints.where(:old_customer == false).count %>, <%= @company.complaints.where(:old_customer == false).count %>],
         backgroundColor: [
         '#85c1e9',
         '#eaf4fb'
@@ -61,7 +61,7 @@
       labels: ["Claims responded", "Claims not responded"],
       datasets: [{
         label: '# of Votes',
-        data: [12, 19],
+        data: [<%= @company.complaints_received - @company.complaints_answered %>, <%= @company.complaints_answered %>],
         backgroundColor: [
         "#eaf4fb",
         "#85c1e9"
@@ -81,10 +81,10 @@
   var myCategoryChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Product/serv.", "Customer serv.", "After sales", "Shipping", "Other"],
+      labels: ["Product/service", "Customer service", "After sales", "Shipping", "Other"],
       datasets: [{
         label: '# of Votes',
-        data: [12, 19, 11, 13, 22],
+        data: [<%= @company.complaints.where(:category == "Product/service").count %>, <%= @company.complaints.where(:category == "Customer service").count %>, <%= @company.complaints.where(:category == "After sales").count %>, <%= @company.complaints.where(:category == "Shipping").count %>, <%= @company.complaints.where(:category == "Other").count %>],
         backgroundColor: [
         "#1f5b83",
         "#2e88c5",
@@ -110,7 +110,7 @@
       labels: ["1", "2", "3", "4", "5"],
       datasets: [{
         label: '# of Stars',
-        data: [14, 11, 12, 13, 10],
+        data: [<%= @company.complaints.where(:response_rating == 1).count %>, <%= @company.complaints.where(:response_rating == 2).count %>, <%= @company.complaints.where(:response_rating == 3).count %>, <% @company.complaints.where(:response_rating == 4).count %>, <%= @company.complaints.where(:response_rating == 5).count %>],
         backgroundColor: [
         "#1f5b83",
         "#2e88c5",
