@@ -49,26 +49,40 @@ class ComplaintsController < ApplicationController
   def update
     @complaint = Complaint.find(params[:id])
     @complaint.update(complaint_params)
-    redirect_to complaint_path(@complaint)
+    redirect_to profile_path
   end
 
   def destroy
     @complaint.destroy
   end
 
-  def marksolved
+  def updaterating
+    @complaint = Complaint.find(params[:id])
+    @complaint.update(response_rating: params[:orange])
+    if @complaint.save
+      redirect_to profile_path
+   end
+  end
 
+  def marksolved
+    @complaint = Complaint.find(params[:id])
+    @complaint.response_solved = true
+    @complaint.save
+    redirect_to profile_path
   end
 
   def markunsolved
-
+    @complaint = Complaint.find(params[:id])
+    @complaint.response_solved = false
+    @complaint.save
+    redirect_to profile_path
   end
 
 
   private
 
   def complaint_params
-    params.require(:complaint).permit(:company_id, :title, :description, :status, :company_rating, :category, :photo, :response, :old_customer)
+    params.require(:complaint).permit(:company_id, :title, :orange, :description, :response_rating, :status, :company_rating, :category, :photo, :response, :old_customer)
   end
 
 
@@ -76,6 +90,7 @@ class ComplaintsController < ApplicationController
     if params[:company_id]
       @company = Company.find(params[:company_id])
     end
+
   end
 
   def set_user
