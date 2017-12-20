@@ -47,33 +47,22 @@ class ComplaintsController < ApplicationController
   end
 
   def update
+    @complaint = Complaint.find(params[:id])
     @complaint.update(complaint_params)
-    redirect_to profile_path
+    redirect_to complaint_path(@complaint)
   end
 
   def destroy
     @complaint.destroy
   end
 
-  def marksolved
-    @complaint = Complaint.find(params[:id].to_i)
-    @complaint.update(status: 1)
-    @company = @complaint.company
-    redirect_to profile_path
-  end
-
-  def markunsolved
-    @complaint = Complaint.find(params[:id].to_i)
-    @complaint.update(status: 2)
-    @company = @complaint.company
-    redirect_to profile_path
-  end
 
   private
 
   def complaint_params
     params.require(:complaint).permit(:company_id, :title, :description, :status, :company_rating, :category, :photo, :response, :old_customer)
   end
+
 
   def set_company
     if params[:company_id]

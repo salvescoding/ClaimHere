@@ -3,7 +3,7 @@
     <div class="container">
       <div class="complaint-show-page">
       <div class="row">
-        <div class="col-lg-10 col-sm-6 col-sm-offset-1">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
           <div class="message">
             <% if @complaint.company_rating == 1 %>
             <%= image_tag("angry", width: '60' )  %>
@@ -46,12 +46,15 @@
             <% end %>
           </div>
         </div>
-        <div class="message-body">
-          <p> <%= @complaint.response %> </p>
+        <div class="message-title">
+          <% if @complaint.response %>
+          <%= @complaint.response %>
         </div>
+        <% else %>
         <%=  simple_form_for @complaint do |f| %>
         <%= f.input :response, as: :text %>
         <%= f.button :submit, class: "btn-claim btn-full" %>
+        <% end %>
         <% end %>
       </div>
     </div>

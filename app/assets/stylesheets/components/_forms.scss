@@ -1,8 +1,7 @@
 #form-search {
-  border-radius: 25px;
   padding: 10px;
   margin: 0 10px;
-  width: 60%;
+  width: 80%;
 }
 
 input:focus {
@@ -11,4 +10,11 @@ input:focus {
 
 .form-control {
   border-radius: 50px;
+}
+
+.reputationco {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }

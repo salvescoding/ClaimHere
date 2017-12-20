@@ -1,27 +1,11 @@
 <div class="profile-card">
-
-  <h2><%= @company.name %></h2>
-
   <div class="text-center comp-emoji">
-    <% if @company.company_rating == 1 %>
-    <%= image_tag("angry", width: '80' )  %>
-    <p>Not recommended</p>
-    <% elsif @company.company_rating == 2 %>
-    <%= image_tag("crying", width: '80') %>
-    <p>Not recommended</p>
-    <% elsif @company.company_rating == 3 %>
-    <%= image_tag("Ok", width: '80') %>
-    <p>Regular</p>
-    <% elsif @company.company_rating == 4 %>
-    <%= image_tag("Good", width: '80') %>
-    <p>Recommended</p>
-    <% elsif @company.company_rating == 5 %>
-    <%= image_tag("InLove", width: '80') %>
-    <p>Very recommended</p>
-    <% else %>
-    <img class="avatar-large" src="https://www.reclameaqui.com.br/images/icons/sem-indice.efce97d7.png">
-    <p>Not rated</p>
-    <% end %>
+    <h3><%= @company.name %></h3>
+      <% if @company.logo %>
+      <a href="https://www.<%= @company.domain %>" target="_blank">
+      <img src="<%= image_path(@company.logo)%>" class="avatar-show" alt="logo">
+      </a>
+      <% end %>
   </div>
 
   <div class="stars-rating">
