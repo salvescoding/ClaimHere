@@ -56,6 +56,14 @@ class ComplaintsController < ApplicationController
     @complaint.destroy
   end
 
+  def marksolved
+
+  end
+
+  def markunsolved
+
+  end
+
 
   private
 
