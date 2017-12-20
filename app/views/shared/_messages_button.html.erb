@@ -17,7 +17,12 @@
       <div class="message-name">
          <h4>
           <% if complaint.company_rating %>
-          <%= complaint.company_rating %> <%= "*" * complaint.company_rating %>
+          <% complaint.company_rating.times do %>
+            <i class="fa fa-star"></i>
+          <% end %>
+          <% (5 - complaint.company_rating).times do %>
+            <i class="fa fa-star-o"></i>
+          <% end %>
           <% end %>
         </h4>
         <p>

@@ -1,5 +1,5 @@
 .banner {
-  color: black;
+  color: white;
   text-align: center;
   height: 80vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -8,7 +8,7 @@
   justify-content: center;
     .row {
     max-width: 1220px;
-    margin: 100px auto;
+    margin: 80px auto;
     padding: 0 40px;
   }
 }
@@ -21,7 +21,7 @@
 .banner p {
   font-size: 25px;
   font-weight: lighter;
-  color: black;
+  color: white;
   opacity: 0.6;
   margin-bottom: 30px;
 }
@@ -68,15 +68,25 @@
 }
 
 .claimhere{
-  background: -webkit-linear-gradient(top, #3498db, #3f5973);
-  background: linear-gradient(top, #3498db, #3f5973);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  // background: -webkit-linear-gradient(top, #3498db, #3f5973);
+  // background: linear-gradient(top, #3498db, #3f5973);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
   margin-top: 0;
+  text-align: left;
+  color: white;
 }
-
-
-
+.ban-content {
+  text-align: left;
+}
+.description {
+  color: white;
+  text-align: left;
+}
+.img-claim {
+    height: 180px;
+    margin: 20px 0px;
+}
 
 
 

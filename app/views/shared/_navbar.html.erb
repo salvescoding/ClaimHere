@@ -1,9 +1,19 @@
   <!-- Logo -->
   <div class="navbar-wagon">
 
-    <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "unity.png", height: 40 %>
+    <% if params[:controller] == "pages" && params[:action] == "home" %>
+      <%= link_to root_path, class: "navbar-wagon-brand" do %>
+        <%= image_tag "unitywhite.svg", height: 40 %>
+      <% end %>
+    <% else %>
+      <%= link_to root_path, class: "navbar-wagon-brand" do %>
+        <%= image_tag "unity.png", height: 40 %>
+      <% end %>
     <% end %>
+
+
+
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
