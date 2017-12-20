@@ -36,7 +36,7 @@
           </strong>
         </p>
         <p>
-          <%= complaint.description.capitalize %>
+          <%= truncate complaint.description.capitalize, length: 150 %>
         </p>
       </div>
       <div class="message-status">

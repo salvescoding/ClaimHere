@@ -1,7 +1,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 80vh;
+  height: 85vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   display: flex;
   align-items: center;
@@ -13,6 +13,20 @@
   }
 }
 
+.padding-negative {
+  margin-top: -150px;
+  margin-bottom: 80px;
+}
+.banner-content {
+  padding-top: 70px;
+}
+.banner-tiny {
+  width: 100vw;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 .banner h1 {
   font-size: 50px;
   font-weight: bold;
@@ -87,14 +101,50 @@
     height: 180px;
     margin: 20px 0px;
 }
+.howto{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 60px;
+  align-items: center;
 
 
+  p {
+    font-size: 12px;
+    font-weight: lighter;
+    color: #585858;
+  }
+  h4 {
+    color: #585858;
+  }
+}
 
+.row-howto h2{
+    border-bottom: 1px solid lightgrey;
+    margin-left: 185px;
+    margin-right: 175px;
+    margin-top: 55px;
+    color: #323232;
+    padding-bottom: 20px;
+  }
+.steps-howto{
+  max-width: 200px;
+  margin: 0 40px;
+}
+.howto-container {
+  height: 60vh;
+}
 
-
-
-
-
+.last-complaints-container {
+  background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/witewall_3.png);
+  padding-bottom: 30px;
+}
+.last-complaints-company {
+  margin-top: 100px;
+  h3 {
+  padding-bottom: 50px;
+  }
+}
 
 
 

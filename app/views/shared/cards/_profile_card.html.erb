@@ -12,14 +12,19 @@
 
   <br>
   <br>
-  <p><%= @user.email %></p>
-  <p>Complaints submitted: <%= @user.complaints_submitted %></p>
-  <p>Complaints answered: 1.790</p>
-  <p>Complaints solved: 55%</p>
+  <div class="text-center">
+    <p><%= @user.email %></p>
+  </div>
+  <div class="profile-info">
+    <p><i class="fa fa-bullhorn fa-lg"></i> submitted: <%= @user.complaints_submitted %></p>
+    <p><i class="fa fa-bullhorn fa-lg"></i> answered: 1.790</p>
+    <p><i class="fa fa-bullhorn fa-lg"></i> solved: 55%</p>
+  </div>
   <br>
   <br>
-
+    <div class="text-center">
     <%= link_to "Edit my profile", edit_user_path(@user), class: "btn-claim" %>
+    </div>
 <br>
 <br>
 

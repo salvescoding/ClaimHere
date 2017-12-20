@@ -19,10 +19,12 @@
     <% end %>
   </div>
 
-  <p>Complaints received: <%= @company.complaints_received %></p>
-  <p>Complaints answered: <%= @company.complaints_answered %></p>
-  <p>Complaints solved: <%= @company.complaints_solved %></p>
-
+  <div class="company-profile">
+    <br>
+    <p><i class="fa fa-bullhorn fa-lg"></i> received: <%= @company.complaints_received %></p>
+    <p><i class="fa fa-bullhorn fa-lg"></i> answered: <%= @company.complaints_answered %></p>
+    <p><i class="fa fa-bullhorn fa-lg"></i> solved: <%= @company.complaints_solved %></p>
+  </div>
   <br>
   <br>
 

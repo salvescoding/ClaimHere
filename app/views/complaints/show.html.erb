@@ -1,10 +1,11 @@
-  <div style="background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/geometry.png);">
+  <div style="background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/witewall_3.png
+);">
 
     <div class="container">
       <div class="complaint-show-page">
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-          <div class="message">
+          <div class="message message-show">
             <% if @complaint.company_rating == 1 %>
             <%= image_tag("angry", width: '60' )  %>
             <% elsif @complaint.company_rating == 2 %>
@@ -48,12 +49,15 @@
         </div>
         <div class="message-title">
           <% if @complaint.response %>
-          <%= @complaint.response %>
+          <div class="response-card">
+            <h5><strong><%= @complaint.company.name %> replied:</strong></h5>
+            <%= @complaint.response %>
+          </div>
         </div>
         <% else %>
         <%=  simple_form_for @complaint do |f| %>
         <%= f.input :response, as: :text %>
-        <%= f.button :submit, class: "btn-claim btn-full" %>
+        <%= f.button :submit, class: "btn-claim btn-full btn-message-show" %>
         <% end %>
         <% end %>
       </div>

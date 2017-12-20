@@ -20,17 +20,29 @@
 </div>
 
 
-<div class="container cardcontainer">
-  <div class="row">
-  <h2>Best companies</h2>
-    <% 8.times do %>
-    <div class="cardbox col-xs-12 col-sm-3">
-      <%= render partial: "shared/cards/card" %>
+<div class="container cardcontainer howto-container">
+  <div class="row row-howto">
+  <h2>How to</h2>
+    <div class="cardbox howto col-xs-12 col-sm-10 col-sm-offset-1">
+      <div class="steps-howto">
+      <%= image_tag("howto-claim.svg", width: '50') %>
+      <h4>Post a complaint</h4>
+      <p>Explain your problem and the ways you tried to solve it. The more we are the more power we hace as consumers.</p>
+      </div>
+      <div class="steps-howto">
+        <%= image_tag("howto-reply.svg", width: '50') %>
+      <h4>Receive a reply</h4>
+      <p>Wait for the company to read your complaint and offer a solution.</p>
+      </div>
+      <div class="steps-howto">
+      <%= image_tag("howto-rating.svg", width: '50') %>
+      <h4>Solve and rate it</h4>
+      <p>Rate if your issue was solved in a helpul way and mark your complaint as solved.</p>
+      </div>
     </div>
-    <% end %>
   </div>
 </div>
-
+<div class="last-complaints-container">
   <div class="container">
     <h2>Last complaints</h2>
     <div class="row">
@@ -43,4 +55,4 @@
       </div>
     </div>
   </div>
-
+</div>

@@ -1,107 +1,140 @@
 <div class="charts-container">
   <div class="row">
     <div class="col-lg-6">
-      <div class="wrapper-claimschart" style="width: 270px; height: 270px">
-        <canvas id="myClaimsChart" width="270" height="270"></canvas>
+      <div class="chart-padding wrapper-claimschart" style="width: 330px; height: 330px">
+        <canvas id="myClaimsChart" width="250" height="250"></canvas>
       </div>
     </div>
 
 
     <div class="col-lg-6">
-      <div class="wrapper-customerchart" style="width: 270px; height: 270px">
-        <canvas id="myCustomerChart" width="270" height="270"></canvas>
+      <div class="chart-padding wrapper-customerchart" style="width: 330px; height: 330px">
+        <canvas id="myCustomerChart" width="250" height="250"></canvas>
       </div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg-6">
-      <div class="wrapper-categorychart" style="width: 270px; height: 270px">
-        <canvas id="myCategoryChart" width="270" height="270"></canvas>
+      <div class="chart-padding wrapper-categorychart" style="width: 330px; height: 330px">
+        <canvas id="myCategoryChart" width="250" height="250"></canvas>
       </div>
     </div>
 
     <div class="col-lg-6">
-      <div class="wrapper-claimschart" style="width: 270px; height: 270px">
-        <canvas id="myClaimsChart" width="270" height="270"></canvas>
+      <div class="chart-padding wrapper-ratingchart" style="width: 330px; height: 330px">
+        <canvas id="myRatingChart" width="250" height="250"></canvas>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-var ctx = document.getElementById("myCustomerChart").getContext('2d');
-var myCustomerChart = new Chart(ctx, {
+  var ctx = document.getElementById("myCustomerChart").getContext('2d');
+  var myCustomerChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["New customer claims", "Old customer claims"],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19],
-            backgroundColor: [
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
+      labels: ["New customer claims", "Old customer claims"],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19],
+        backgroundColor: [
+        '#85c1e9',
+        '#eaf4fb'
+        ],
+        borderColor: [
+        '#85c1e9',
+        '#eaf4fb'
+        ],
+        borderWidth: 1
+      }]
     },
-
-});
+  });
 </script>
 <script>
-var ctx = document.getElementById("myClaimsChart").getContext('2d');
-var myCustomerChart = new Chart(ctx, {
+
+
+  var ctx = document.getElementById("myClaimsChart").getContext('2d');
+  var myClaimsChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Claims submitted", "Claims responded"],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19],
-            backgroundColor: [
-
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)'
-            ],
-            borderColor: [
-
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 1
-        }]
+      labels: ["Claims responded", "Claims not responded"],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19],
+        backgroundColor: [
+        "#eaf4fb",
+        "#85c1e9"
+        ],
+        borderColor: [
+        "#eaf4fb",
+        "#85c1e9"
+        ],
+        borderWidth: 1
+      }]
     },
-
-});
+  });
 </script>
 
 <script>
-var ctx = document.getElementById("myCategoryChart").getContext('2d');
-var myCustomerChart = new Chart(ctx, {
+  var ctx = document.getElementById("myCategoryChart").getContext('2d');
+  var myCategoryChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Product/service", "Customer service", "After buy service", "Durability"],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 11, 13],
-            backgroundColor: [
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)'
-            ],
-            borderColor: [
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 1
-        }]
+      labels: ["Product/serv.", "Customer serv.", "After sales", "Shipping", "Other"],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 11, 13, 22],
+        backgroundColor: [
+        "#1f5b83",
+        "#2e88c5",
+        "#48a2de",
+        "#85c1e9",
+        "#eaf4fb"],
+        borderColor: [
+        "#1f5b83",
+        "#2e88c5",
+        "#48a2de",
+        "#85c1e9",
+        "#eaf4fb"],
+        borderWidth: 1
+      }]
     },
+  });
+</script>
+<script>
+  var ctx = document.getElementById("myRatingChart").getContext('2d');
+  var myRatingChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ["1", "2", "3", "4", "5"],
+      datasets: [{
+        label: '# of Stars',
+        data: [14, 11, 12, 13, 10],
+        backgroundColor: [
+        "#1f5b83",
+        "#2e88c5",
+        "#48a2de",
+        "#85c1e9",
+        "#eaf4fb"],
+        borderColor: [
+        "#1f5b83",
+        "#2e88c5",
+        "#48a2de",
+        "#85c1e9",
+        "#eaf4fb"],
+        borderWidth: 1
+      }]
+    },
+    options: {
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    }
+}
+  });
 
-});
 </script>

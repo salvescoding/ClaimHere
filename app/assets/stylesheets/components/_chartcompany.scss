@@ -10,18 +10,21 @@
 }
 .companycharts {
   justify-content: space-between;
+
 }
 
 .charts-container {
-  height: 704.5px;
-  border: 2px solid lightgrey;
-  padding: 30px;
-  margin: 20px 0px;
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-  box-shadow: 0 10px 6px -6px #777;
+  height: 704px;
   background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px solid #faf6f6;
+  padding: 30px;
+  margin: 14px 0px;
+  box-shadow: 0 0px 5px rgba(1,1,1,0.3);
+}
+.chart-padding {
+  padding: 30px;
 }
