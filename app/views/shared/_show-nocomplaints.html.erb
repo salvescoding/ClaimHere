@@ -1,0 +1,25 @@
+
+  <div class="banner-stuck" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'background.gif' %>')"></div>
+
+<div class="padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 ">
+        <div class="no-complaints text-center">
+          <div class="header-container">
+          <h2 class="cool-bottom">Welcome</h2>
+                     <% if @company.logo %>
+             <a href="https://www.<%= @company.domain %>" target="_blank">
+             <img src="<%= image_path(@company.logo)%>" class="avatar-show" alt="logo">
+            </a>
+           <% end %>
+           </div>
+          <h4 class="cool-bottom">No complaints on the company <%= @company.name %></h4>
+
+
+          <%= link_to 'Be the first on to post claim', new_company_complaint_path(@company), class: "btn-complaint btn-lg" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
