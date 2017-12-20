@@ -16,5 +16,13 @@ class Company < ApplicationRecord
     complaints.count
   end
 
+  def complaints_answered
+    complaints.where.not(response: nil).count
+  end
+
+  def complaints_solved
+    complaints.where(status: '1').count
+  end
+
 
 end

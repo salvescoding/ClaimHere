@@ -7,14 +7,21 @@
       </a>
       <% end %>
   </div>
-  <br>
-  <br>
-  <% if @company.company_rating.present? %>
-  <p>Overall company rating: <%= @company.company_rating %> / 5</p>
-  <% end %>
+
+  <div class="stars-rating">
+   <% if @company.company_rating %>
+    <% @company.company_rating.times do %>
+      <i class="fa fa-star fa-2x"></i>
+    <% end %>
+    <% (5 - @company.company_rating).times do %>
+      <i class="fa fa-star-o fa-2x"></i>
+    <% end %>
+    <% end %>
+  </div>
+
   <p>Complaints received: <%= @company.complaints_received %></p>
-  <p>Complaints answered: 1.790</p>
-  <p>Complaints solved: 55%</p>
+  <p>Complaints answered: <%= @company.complaints_answered %></p>
+  <p>Complaints solved: <%= @company.complaints_solved %></p>
 
   <br>
   <br>

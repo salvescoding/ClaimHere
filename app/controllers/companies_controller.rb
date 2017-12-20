@@ -3,7 +3,7 @@ class CompaniesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :find]
 
   def show
-   @complaints = Complaint.all.where(company: @company)
+   @complaints = Complaint.all.where(company: @company).paginate(page: params[:page], per_page: 5)
   end
 
   def find

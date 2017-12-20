@@ -1,10 +1,34 @@
- .btn-claim {
+ .btn-home {
+  /*background: #2c3e50;   fallback for old browsers */
+ /*background: -webkit-linear-gradient(to right, #3498db, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
+ /*background: linear-gradient(to right, #3498db, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /*background-image: linear-gradient(to left,  #3498db 0%, #3f5973 100%);*/
+  transition: 0.4s;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 40px;
+  text-decoration: none;
+  // box-shadow: 0 0 20px #eee;
+  text-align: center;
+  flex: 1 1 auto;
+  background-size: 200% auto;
+  color: #3498db;
+  background-color: white;
+  border: none;
+}
+
+.btn-home:hover {
+  color: white;
+  text-decoration: none;
+  background-position: right center;
+}
+
+.btn-claim {
   /*background: #2c3e50;   fallback for old browsers */
  /*background: -webkit-linear-gradient(to right, #3498db, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
  /*background: linear-gradient(to right, #3498db, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-image: linear-gradient(to left,  #3498db 0%, #3f5973 100%);
   transition: 0.4s;
-  color: white;
   padding: 10px 20px;
   margin: 10px;
   border-radius: 40px;
@@ -12,9 +36,10 @@
   box-shadow: 0 0 20px #eee;
   text-align: center;
   flex: 1 1 auto;
+  color: white;
   background-size: 200% auto;
 }
-.btn-claim:hover {
+.btn-home:hover {
   color: white;
   text-decoration: none;
   background-position: right center;

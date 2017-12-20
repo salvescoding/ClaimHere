@@ -27,6 +27,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'will_paginate', '~> 3.1.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

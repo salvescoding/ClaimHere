@@ -11,7 +11,7 @@ class ComplaintsController < ApplicationController
   def new
     @complaint = Complaint.new
     @companies = Company.all
-    @categories = ["Telecomunications", "Retail", "Airline"]
+    @categories = ["Product/service", "Customer service", "After buy service", "Durability"]
     @rating = (1..5)
   end
 
@@ -60,7 +60,7 @@ class ComplaintsController < ApplicationController
   private
 
   def complaint_params
-    params.require(:complaint).permit(:company_id, :title, :description, :status, :company_rating, :category, :photo, :response)
+    params.require(:complaint).permit(:company_id, :title, :description, :status, :company_rating, :category, :photo, :response, :old_customer)
   end
 
 
