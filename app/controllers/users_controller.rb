@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def show
-    @complaints = current_user.complaints
+    @complaints = current_user.complaints.order(created_at: :desc)
   end
 
   def edit

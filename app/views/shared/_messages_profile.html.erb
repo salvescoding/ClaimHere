@@ -1,6 +1,7 @@
 <div class="messages-show-company">
   <div class="message">
     <div class="message-header">
+    <%= link_to complaint.company.name, company_path(complaint.company), class: "message-company-name" %>
     <% if complaint.company_rating == 1 %>
     <%= image_tag("angry", width: '30' )  %>
     <% elsif complaint.company_rating == 2 %>
@@ -12,16 +13,15 @@
     <% elsif complaint.company_rating == 5 %>
     <%= image_tag("InLove", width: '30') %>
     <% end %>
-
   </div>
-  <%= link_to complaint_path(complaint), class: "message-body" do %>
-    <p class="message-title">
 
+  <%= link_to complaint_path(complaint), class: "message-body-profile" do %>
+    <p class="message-title-profile">
       <strong>
         <%= complaint.title.capitalize %>
       </strong>
     </p>
-    <p>
+    <p class="message-description-profile">
       <%= complaint.description.capitalize %>
     </p>
   <% end %>
@@ -33,7 +33,7 @@
     <% end %>
       <div class="stars">
         <% if complaint.response_solved == false %>
-        <%= link_to "Mark as Solved", marksolved_complaint_path(complaint), method: :patch, class:"btn btn-claim" %>
+        <%= link_to "Mark as Solved", marksolved_complaint_path(complaint), method: :patch, class:"btn btn-claim-profile" %>
         <% else %>
         <% @counter = 1 %>
 
@@ -53,7 +53,7 @@
       </div>
     <div class="mark-button">
 
-      <%= link_to "Mark as Not Solved", markunsolved_complaint_path(complaint), method: :patch, class:"btn btn-complaint" %>
+      <p class="rate-response">Rate the response of the company</p>
       <% end %>
     </div>
 

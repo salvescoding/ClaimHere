@@ -9,7 +9,7 @@
         <div class="profile-right section2">
           <% @complaints.each do |complaint| %>
             <div class="col-lg-12">
-              <%= render partial: "shared/messages_button", locals: { complaint: complaint } %>
+              <%= render partial: "shared/messages_profile", locals: { complaint: complaint } %>
             </div>
           <% end %>
         </div>

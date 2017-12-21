@@ -35,6 +35,50 @@
   }
 }
 
+.message-body-profile {
+  flex-grow: 1;
+  font-size: 15px;
+  padding: 20px;
+  color: rgba(0,0,0,0.4);
+  text-align: justify;
+   &:hover {
+    text-decoration: none;
+    color: #3f5b76;
+  }
+  strong{
+    color: rgba(0,0,0,0.9);
+    color: rgba(0,0,0,0.9);
+  }
+}
+
+.message-description-profile {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.rate-response {
+  font-size: 14px;
+}
+
+.message-title-profile {
+  font-size: 18px;
+}
+
+.message-header {
+  padding: 20px 25px;
+  display: flex;
+  justify-content: column;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.message-company-name {
+  text-decoration: none;
+  color: #3f5b76;
+  padding: 7px;
+}
+
 .mark-button .btn-complaint {
   margin-right: 0;
 }
@@ -89,6 +133,7 @@
   text-align: justify;
   padding-right: 20px;
 }
+
 .message-body strong{
   color: rgba(0,0,0,0.9);
   color: rgba(0,0,0,0.9);
