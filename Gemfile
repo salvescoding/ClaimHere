@@ -25,7 +25,7 @@ gem 'redis'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
-gem 'uglifier'
+# gem 'uglifier'
 gem 'webpacker'
 gem 'will_paginate', '~> 3.1.0'
 
