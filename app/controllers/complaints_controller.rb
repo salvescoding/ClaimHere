@@ -11,7 +11,7 @@ class ComplaintsController < ApplicationController
   def new
     @complaint = Complaint.new
     @companies = Company.all
-    @categories = ["Product/service", "Customer service", "After buy service", "Durability"]
+    @categories = ["Product/service", "Customer service", "After sales", "Shipping", "Other"]
     @rating = (1..5)
   end
 

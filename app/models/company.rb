@@ -1,4 +1,5 @@
 class Company < ApplicationRecord
+  include HasComplaints
   has_many :complaints, dependent: :destroy
   has_many :users, through: :complaints
 
@@ -15,14 +16,6 @@ class Company < ApplicationRecord
 
   def complaints_received
     complaints.count
-  end
-
-  def complaints_answered
-    complaints.where.not(response: nil).count
-  end
-
-  def complaints_solved
-    complaints.where(status: '1').count
   end
 
 
