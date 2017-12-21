@@ -13,8 +13,6 @@ function attachEvents() {
 }
 
 
-
-
 function search(event) {
     const input = event.target;
     const search = input.value;
