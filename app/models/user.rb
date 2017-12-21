@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+  include HasComplaints
   devise :omniauthable, omniauth_providers: [:facebook]
   has_attachment :photo
 
