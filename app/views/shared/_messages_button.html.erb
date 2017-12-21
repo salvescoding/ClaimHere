@@ -1,6 +1,6 @@
 <div class="messages-show-company">
-  <%= link_to complaint_path(complaint), class: "test" do %>
   <div class="message">
+    <div class="message-header">
     <% if complaint.company_rating == 1 %>
     <%= image_tag("angry", width: '30' )  %>
     <% elsif complaint.company_rating == 2 %>
@@ -12,22 +12,9 @@
     <% elsif complaint.company_rating == 5 %>
     <%= image_tag("InLove", width: '30') %>
     <% end %>
-    <div class="message-name">
-     <h4>
-      <% if complaint.company_rating %>
-      <% complaint.company_rating.times do %>
-      <i class="fa fa-star"></i>
-      <% end %>
-      <% (5 - complaint.company_rating).times do %>
-      <i class="fa fa-star-o"></i>
-      <% end %>
-      <% end %>
-    </h4>
-    <p>
-      <%= complaint.created_at.strftime("%d-%m-%Y") %>
-    </p>
+
   </div>
-  <div class="message-body">
+  <%= link_to complaint_path(complaint), class: "message-body" do %>
     <p class="message-title">
 
       <strong>
@@ -37,7 +24,6 @@
     <p>
       <%= complaint.description.capitalize %>
     </p>
-  </div>
   <% end %>
   <div class="message-status-button">
     <% if complaint.response_solved == false %>
@@ -45,26 +31,27 @@
     <% else %>
     <h6>Solved</h6>
     <% end %>
+      <div class="stars">
+        <% if complaint.response_solved == false %>
+        <%= link_to "Mark as Solved", marksolved_complaint_path(complaint), method: :patch, class:"btn btn-claim" %>
+        <% else %>
+        <% @counter = 1 %>
 
-    <div class="mark-button">
-      <% if complaint.response_solved == false %>
-      <%= link_to "Mark as Solved", marksolved_complaint_path(complaint), method: :patch, class:"btn btn-claim" %>
-      <% else %>
-      <% @counter = 1 %>
-
-      <% complaint.response_rating.times do %>
-      <%= link_to updaterating_complaint_path(complaint, orange: @counter), method: :patch do %>
-       <i class="fa fa-star <%= @counter %>"></i>
+        <% complaint.response_rating.times do %>
+        <%= button_to updaterating_complaint_path(complaint, orange: @counter), method: :patch, remote: true do %>
+         <i class="fa fa-star <%= @counter %>"></i>
+          <% @counter += 1 %>
+         <% end %>
+        <% end %>
+        <% (5 - complaint.response_rating).times do %>
+        <%= button_to updaterating_complaint_path(complaint, orange: @counter), method: :patch, remote: true do %>
+        <i class="fa fa-star-o <%= @counter %>">
+        </i>
         <% @counter += 1 %>
-       <% end %>
-      <% end %>
-      <% (5 - complaint.response_rating).times do %>
-      <%= link_to updaterating_complaint_path(complaint, orange: @counter), method: :patch do %>
-      <i class="fa fa-star-o <%= @counter %>">
-      </i>
-      <% @counter += 1 %>
-      <% end %>
-      <% end %>
+        <% end %>
+        <% end %>
+      </div>
+    <div class="mark-button">
 
       <%= link_to "Mark as Not Solved", markunsolved_complaint_path(complaint), method: :patch, class:"btn btn-complaint" %>
       <% end %>
