@@ -12,6 +12,77 @@
     height: 100%;
   }
 }
+
+.stars {
+  display: flex;
+  button {
+    border: none;
+    background-color: transparent;
+    transform: scale(1) rotate(0deg);
+    transition: transform 200ms ease;
+    &:hover {
+      transform: scale(1.2) rotate(10deg);
+    }
+    &:active {
+      transform: scale(2) rotate(360deg);
+    }
+    &:focus {
+      outline: none;
+    }
+    .fa-star {
+      color: gold;
+    }
+  }
+}
+
+.message-body-profile {
+  flex-grow: 1;
+  font-size: 15px;
+  padding: 20px;
+  color: rgba(0,0,0,0.4);
+  text-align: justify;
+   &:hover {
+    text-decoration: none;
+    color: #3f5b76;
+  }
+  strong{
+    color: rgba(0,0,0,0.9);
+    color: rgba(0,0,0,0.9);
+  }
+}
+
+.message-description-profile {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.rate-response {
+  font-size: 14px;
+}
+
+.message-title-profile {
+  font-size: 18px;
+}
+
+.message-header {
+  padding: 20px 25px;
+  display: flex;
+  justify-content: column;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.message-company-name {
+  text-decoration: none;
+  color: #3f5b76;
+  padding: 7px;
+}
+
+.mark-button .btn-complaint {
+  margin-right: 0;
+}
+
 .test:hover {
   text-decoration: none;
 }
@@ -20,6 +91,11 @@
   align-items: center;
   padding: 20px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
+}
+.message-status-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .message-show {
   flex-direction: column;
@@ -57,6 +133,7 @@
   text-align: justify;
   padding-right: 20px;
 }
+
 .message-body strong{
   color: rgba(0,0,0,0.9);
   color: rgba(0,0,0,0.9);
@@ -81,8 +158,8 @@
 .message-title {
   font-size: 18px;
   a {
-  text-decoration: none;
-  color: #3f5b76;
+    text-decoration: none;
+    color: #3f5b76;
   }
 }
 .message-status-button {

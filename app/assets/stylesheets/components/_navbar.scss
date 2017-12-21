@@ -62,13 +62,29 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
+  color: #3F5C77;
+  font-size: 17px;
+  opacity: 1;
 }
+
 .navbar-wagon-link:hover {
-  color: #da552f;
+  opacity: 0.7;
   text-decoration: none;
 }
+
+.navbar-wagon-link-home {
+  color: white;
+  opacity: 0.7;
+  font-size: 17px;
+}
+
+.navbar-wagon-link-home:hover {
+  color: white;
+  opacity: 1;
+  font-size: 17px;
+  text-decoration: none;
+}
+
 
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {

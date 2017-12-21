@@ -1,7 +1,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 85vh;
+  height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   display: flex;
   align-items: center;
@@ -146,6 +146,9 @@
   }
 }
 
+.heading-rotation-container {
+  min-height: 150px
+}
 
 
 

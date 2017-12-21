@@ -88,3 +88,23 @@
 .fa-bullhorn {
   margin-right: 10px;
 }
+
+.btn-claim-profile {
+  background-image: linear-gradient(to left,  #3498db 0%, #3f5973 100%);
+  transition: 0.4s;
+  padding: 7px 7px;
+  margin: 5px;
+  border-radius: 40px;
+  text-decoration: none;
+  box-shadow: 0 0 20px #eee;
+  text-align: center;
+  flex: 1 1 auto;
+  color: white;
+  background-size: 200% auto;
+  font-size: 15px;
+}
+.btn-claim-profile:hover {
+  color: white;
+  text-decoration: none;
+  background-position: right center;
+}

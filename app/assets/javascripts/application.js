@@ -6,4 +6,4 @@
 //= require attachinary
 //= require_tree .
 
-$(".alert" ).fadeOut(5000);
+$(".alert" ).fadeOut(3000);

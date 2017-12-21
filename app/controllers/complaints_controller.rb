@@ -1,7 +1,7 @@
 class ComplaintsController < ApplicationController
   before_action :set_company
   before_action :set_user
-  skip_before_action :authenticate_user!, only: [:new, :create]
+  skip_before_action :authenticate_user!, only: [:new, :create, :show]
 
 
   def show

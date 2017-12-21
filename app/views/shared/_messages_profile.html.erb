@@ -1,0 +1,65 @@
+<div class="messages-show-company">
+  <div class="message">
+    <div class="message-header">
+    <%= link_to complaint.company.name, company_path(complaint.company), class: "message-company-name" %>
+    <% if complaint.company_rating == 1 %>
+    <%= image_tag("angry", width: '30' )  %>
+    <% elsif complaint.company_rating == 2 %>
+    <%= image_tag("crying", width: '30') %>
+    <% elsif complaint.company_rating == 3 %>
+    <%= image_tag("Ok", width: '30') %>
+    <% elsif complaint.company_rating == 4 %>
+    <%= image_tag("Good", width: '30') %>
+    <% elsif complaint.company_rating == 5 %>
+    <%= image_tag("InLove", width: '30') %>
+    <% end %>
+  </div>
+
+  <%= link_to complaint_path(complaint), class: "message-body-profile" do %>
+    <p class="message-title-profile">
+      <strong>
+        <%= complaint.title.capitalize %>
+      </strong>
+    </p>
+    <p class="message-description-profile">
+      <%= complaint.description.capitalize %>
+    </p>
+  <% end %>
+  <div class="message-status-button">
+    <% if complaint.response_solved == false %>
+    <h6>Not solved</h6>
+    <% else %>
+    <h6>Solved</h6>
+    <% end %>
+      <div class="stars">
+        <% if complaint.response_solved == false %>
+        <%= link_to "Mark as Solved", marksolved_complaint_path(complaint), method: :patch, class:"btn btn-claim-profile" %>
+        <% else %>
+        <% @counter = 1 %>
+
+        <% complaint.response_rating.times do %>
+        <%= button_to updaterating_complaint_path(complaint, orange: @counter), method: :patch, remote: true do %>
+         <i class="fa fa-star <%= @counter %>"></i>
+          <% @counter += 1 %>
+         <% end %>
+        <% end %>
+        <% (5 - complaint.response_rating).times do %>
+        <%= button_to updaterating_complaint_path(complaint, orange: @counter), method: :patch, remote: true do %>
+        <i class="fa fa-star-o <%= @counter %>">
+        </i>
+        <% @counter += 1 %>
+        <% end %>
+        <% end %>
+      </div>
+    <div class="mark-button">
+
+      <p class="rate-response">Rate the response of the company</p>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+<!-- <a class="message-link" href="#" ></a> -->
+</div>
+
