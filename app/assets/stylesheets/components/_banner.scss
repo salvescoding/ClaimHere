@@ -29,8 +29,10 @@
 }
 .banner h1 {
   font-size: 50px;
+  letter-spacing: 3px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 25px;
 }
 .banner p {
   font-size: 25px;
@@ -38,6 +40,7 @@
   color: white;
   opacity: 0.6;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .register{
@@ -89,6 +92,7 @@
   margin-top: 0;
   text-align: left;
   color: white;
+  letter-spacing: 3px;
 }
 .ban-content {
   text-align: left;
@@ -147,8 +151,20 @@
 }
 
 .heading-rotation-container {
-  min-height: 150px
+  min-height: 190px
 }
+
+.description-home {
+  color: whitesmoke;
+  text-align: center;
+  h4 {
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    font-size: 20px;
+  }
+}
+
+
 
 
 

@@ -48,8 +48,13 @@ class ComplaintsController < ApplicationController
 
   def update
     @complaint = Complaint.find(params[:id])
-    @complaint.update(complaint_params)
-    redirect_to profile_path
+    if @complaint.response.nil?
+      @complaint.update(complaint_params)
+      redirect_to complaint_path(@complaint)
+    else
+      @complaint.update(complaint_params)
+      redirect_to profile_path
+    end
   end
 
   def destroy
