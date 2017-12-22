@@ -15,14 +15,13 @@
           <%= f.input :old_customer, :collection => [['Yes',false],['No',true]],
             :include_blank => false,
             :label => "Are you a new customer?" %>
-          <%= f.input :photo, as: :attachinary %>
           <%= f.button :submit, class: "btn-claim btn-full" %>
         <% end %>
 
         <% if !@company %>
-          <%= link_to "Back", root_path, class: "btn btn-claim" %>
+          <%= link_to "Back", root_path, class: "btn btn-claim btn-full" %>
         <% else %>
-          <%= link_to "Back", company_path(@company), class: "btn btn-claim" %>
+          <%= link_to "Back", company_path(@company), class: "btn btn-claim btn-full" %>
         <% end %>
 
       </div>
