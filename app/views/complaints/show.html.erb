@@ -40,10 +40,10 @@
             </p>
           </div>
           <div class="message-status">
-            <% if @complaint.status == "1" %>
-              <p>Solved</p>
+            <% if @complaint.response_solved == true %>
+              <p class="solved">Solved</p>
             <% else %>
-              <p>Unsolved</p>
+              <p class="unsolved">Unsolved</p>
             <% end %>
           </div>
         </div>

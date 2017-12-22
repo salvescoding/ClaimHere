@@ -7,9 +7,17 @@
     <div class="col-lg-9">
       <div class="row">
         <div class="profile-right section2">
-          <% @complaints.each do |complaint| %>
-            <div class="col-lg-12">
-              <%= render partial: "shared/messages_profile", locals: { complaint: complaint } %>
+          <% if @complaints != []%>
+            <% @complaints.each do |complaint| %>
+              <div class="col-lg-12">
+                <%= render partial: "shared/messages_profile", locals: { complaint: complaint } %>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="rowrow">
+              <div class="col-lg-6">
+                 <p>You haven't submitted any complaints yet</p>
+              </div>
             </div>
           <% end %>
         </div>
