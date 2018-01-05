@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 
   def after_sign_in_path_for(resource)
-    if cookies[:complaint]
+    if !cookies[:complaint].nil?
      arguments = JSON.parse(cookies[:complaint])
      complaint = Complaint.new(arguments)
      complaint.user = current_user
@@ -16,7 +16,6 @@ class ApplicationController < ActionController::Base
      company_path(company_id)
    else
      root_path
-     flash[:notice] = "We could not save your complaint!"
    end
   end
 
