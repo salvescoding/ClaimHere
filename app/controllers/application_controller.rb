@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 
   def after_sign_in_path_for(resource)
-    if !cookies[:complaint].nil?
+    if cookies[:complaint]
      arguments = JSON.parse(cookies[:complaint])
      complaint = Complaint.new(arguments)
      complaint.user = current_user

@@ -20,6 +20,7 @@
         <div class="row">
         <h3 class="text-center">Last Complaints for <%= @company.name %></h3>
           <div class="section2">
+            <% @complaints = @complaints.order(created_at: :desc) %>
             <% @complaints.each do |complaint| %>
               <%= render partial: 'shared/messages', locals: { complaint: complaint } %>
             <% end %>
