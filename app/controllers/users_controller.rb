@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def show
-    @complaints = current_user.complaints.order(created_at: :desc)
+    @complaints = current_user.complaints.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
   end
 
   def edit
