@@ -23,16 +23,20 @@ margin-top: 10px;
     justify-content: center;
     .pagination {
       span, em {
-        background-color: gray;
+        background-color: lightgrey;
         color: white;
-        padding: 3px 5px;
+        padding: 8px;
+        border-radius: 5px;
       }
       a {
-        background-color: #3498db;
+        background-color: #3E749D;
+        opacity: 0.8;
         color: white;
-        padding: 3px 5px;
+        padding: 8px;
+        border-radius: 5px;
         &:hover {
           text-decoration: none;
+          opacity: 1;
         }
       }
     }

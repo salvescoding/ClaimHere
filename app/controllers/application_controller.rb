@@ -9,10 +9,10 @@ class ApplicationController < ActionController::Base
      arguments = JSON.parse(cookies[:complaint])
      complaint = Complaint.new(arguments)
      complaint.user = current_user
-     complaint.company_id = cookies[:company_id]
+     company_id = cookies[:company_id]
+     complaint.company_id = company_id
      complaint.save!
      cookies.delete(:complaint)
-     company_id = cookies[:company_id]
      company_path(company_id)
    else
      root_path

@@ -5,9 +5,6 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
         <%= simple_form_for [@company, @complaint] do |f| %>
-          <% if !@company %>
-          <%= f.input :company_id, collection: @companies, as: :select %>
-          <% end %>
           <%= f.input :title %>
           <%= f.input :description, as: :text %>
           <%= f.input :category, collection: @categories, as: :select %>

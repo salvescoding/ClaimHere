@@ -1,53 +1,53 @@
 class ComplaintsController < ApplicationController
-  before_action :set_company
+  before_action :set_company, only: [:new, :create_complaint_user_signed_in, :create_complaint_user_not_signed_in, :create]
   before_action :set_user
+  before_action :set_complaint, except: [:new, :create]
   skip_before_action :authenticate_user!, only: [:new, :create, :show]
 
 
   def show
-    @complaint = Complaint.find(params[:id])
   end
 
   def new
     @complaint = Complaint.new
-    @companies = Company.all
     @categories = ["Product/service", "Customer service", "After sales", "Shipping", "Other"]
     @rating = (1..5)
   end
 
   def create
     if !current_user
-      unless @company
-        cookies[:company_id] = params[:complaint][:company_id]
-        cookies[:complaint] = complaint_params.to_json
-        redirect_to new_user_registration_path
-      else
-        cookies[:company_id] = @company.id
-        cookies[:complaint] = complaint_params.to_json
-        redirect_to new_user_registration_path
-      end
+      create_complaint_user_not_signed_in
     else
-      @complaint = Complaint.new(complaint_params)
-      @complaint.user = current_user
+      create_complaint_user_signed_in
+    end
+  end
 
-      if !params[:complaint][:company_id].nil?
-        @complaint.company_id = params[:complaint][:company_id]
-        @complaint.save
-        redirect_to company_path(params[:complaint][:company_id])
+  def create_complaint_user_signed_in
+    @complaint = Complaint.new(complaint_params)
+    @complaint.user = current_user
+    @complaint.company_id = @company.id
+    if @complaint.save
+      redirect_to company_path(@company)
+     else
+       render :new
+       flash[:notice] = "We could not save your complaint!"
+    end
+  end
 
-      elsif !params[:company_id].nil?
-         @complaint.company_id = params[:company_id]
-         @complaint.save
-        redirect_to company_path(params[:company_id])
-      else
-         render :new
-         flash[:notice] = "We could not save your complaint!"
-      end
+
+  def create_complaint_user_not_signed_in
+    unless @company
+      cookies[:company_id] = params[:company_id]
+      cookies[:complaint] = complaint_params.to_json
+      redirect_to new_user_registration_path
+    else
+      cookies[:company_id] = @company.id
+      cookies[:complaint] = complaint_params.to_json
+      redirect_to new_user_registration_path
     end
   end
 
   def update
-    @complaint = Complaint.find(params[:id])
     if @complaint.response.nil?
       @complaint.update(complaint_params)
       redirect_to complaint_path(@complaint)
@@ -62,7 +62,6 @@ class ComplaintsController < ApplicationController
   end
 
   def updaterating
-    @complaint = Complaint.find(params[:id])
     @complaint.update(response_rating: params[:orange])
     if @complaint.save
       redirect_to profile_path
@@ -70,14 +69,12 @@ class ComplaintsController < ApplicationController
   end
 
   def marksolved
-    @complaint = Complaint.find(params[:id])
     @complaint.response_solved = true
     @complaint.save
     redirect_to profile_path
   end
 
   def markunsolved
-    @complaint = Complaint.find(params[:id])
     @complaint.response_solved = false
     @complaint.save
     redirect_to profile_path
@@ -90,12 +87,16 @@ class ComplaintsController < ApplicationController
     params.require(:complaint).permit(:company_id, :title, :orange, :description, :response_rating, :status, :company_rating, :category, :photo, :response, :old_customer)
   end
 
+  def set_complaint
+    @complaint = Complaint.find(params[:id])
+  end
 
   def set_company
-    if params[:company_id]
+    if !params[:company_id].nil?
       @company = Company.find(params[:company_id])
+    else
+      @company = Company.find(@company.id)
     end
-
   end
 
   def set_user
