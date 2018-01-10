@@ -1,5 +1,4 @@
-
-  <div class="banner-stuck" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'background.gif' %>')"></div>
+<div class="banner-stuck" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'background.gif' %>')"></div>
 
 <div class="padding">
   <div class="container">
@@ -8,7 +7,7 @@
         <div class="no-complaints text-center">
           <div class="header-container">
           <h2 class="cool-bottom">Welcome</h2>
-                     <% if @company.logo %>
+            <% if @company.logo %>
              <a href="https://www.<%= @company.domain %>" target="_blank">
              <img src="<%= image_path(@company.logo)%>" class="avatar-show" alt="logo">
             </a>

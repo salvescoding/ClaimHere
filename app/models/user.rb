@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   include HasComplaints
   devise :omniauthable, omniauth_providers: [:facebook]
-  has_attachment :photo
 
   has_many :complaints
   has_many :companies, through: :complaints
@@ -31,15 +30,9 @@ class User < ApplicationRecord
     return user
   end
 
-  def self.company(search)
-   if search
-      Company.find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-    else
-      Company.find(:all)
-    end
-  end
 
   def complaints_submitted
     complaints.count
   end
+
 end

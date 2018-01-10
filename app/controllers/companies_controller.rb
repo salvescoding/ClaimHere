@@ -20,7 +20,6 @@ class CompaniesController < ApplicationController
   end
 
    def index
-
    end
 
   private
