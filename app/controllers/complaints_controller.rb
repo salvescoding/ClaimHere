@@ -30,21 +30,19 @@ class ComplaintsController < ApplicationController
       redirect_to company_path(@company)
      else
        render :new
-       flash[:notice] = "We could not save your complaint!"
     end
   end
 
 
   def create_complaint_user_not_signed_in
-    unless @company
-      cookies[:company_id] = params[:company_id]
-      cookies[:complaint] = complaint_params.to_json
-      redirect_to new_user_registration_path
-    else
-      cookies[:company_id] = @company.id
-      cookies[:complaint] = complaint_params.to_json
-      redirect_to new_user_registration_path
-    end
+   #when user starts complaint from the company page
+    cookies[:complaint] = complaint_params.to_json
+    cookies[:company_id] = @company.id
+    redirect_to new_user_registration_path
+
+    #When user starts complaint from home page
+    # unless @company
+    #   cookies[:company_id] = params[:company_id]
   end
 
   def update
