@@ -1,6 +1,7 @@
 <div class="messages-show-company">
   <%= link_to complaint_path(complaint), class: "test" do %>
-    <div class="message">
+  <div class="message">
+    <div class="message-name">
       <% if complaint.company_rating == 1 %>
         <%= image_tag("angry", width: '30' )  %>
       <% elsif complaint.company_rating == 2 %>
@@ -12,40 +13,38 @@
       <% elsif complaint.company_rating == 5 %>
         <%= image_tag("InLove", width: '30') %>
       <% end %>
-      <div class="message-name">
-         <h4>
-          <% if complaint.company_rating %>
-          <% complaint.company_rating.times do %>
-            <i class="fa fa-star"></i>
-          <% end %>
-          <% (5 - complaint.company_rating).times do %>
-            <i class="fa fa-star-o"></i>
-          <% end %>
-          <% end %>
-        </h4>
-        <p>
-          <%= complaint.created_at.strftime("%d-%m-%Y") %>
-        </p>
-      </div>
-      <div class="message-body">
-        <p class="message-title">
-          <strong>
-            <%= complaint.title.capitalize %>
-          </strong>
-        </p>
-        <p>
-          <%= truncate complaint.description.capitalize, length: 150 %>
-        </p>
-      </div>
-      <div class="message-status">
-        <% if complaint.response_solved == true %>
-        <p class="solved">Solved</p>
-        <% else %>
-        <p class="unsolved">Unsolved</p>
+      <h4>
+        <% if complaint.company_rating %>
+        <% complaint.company_rating.times do %>
+          <i class="fa fa-star"></i>
         <% end %>
-      </div>
+        <% (5 - complaint.company_rating).times do %>
+          <i class="fa fa-star-o"></i>
+        <% end %>
+        <% end %>
+      </h4>
+      <p>
+        <%= complaint.created_at.strftime("%d-%m-%Y") %>
+      </p>
     </div>
-    <% end %>
-      <!-- <a class="message-link" href="#" ></a> -->
+    <div class="message-body">
+      <p class="message-title">
+        <strong>
+        <%= complaint.title.capitalize %>
+        </strong>
+      </p>
+      <p>
+        <%= truncate complaint.description.capitalize, length: 150 %>
+      </p>
+    </div>
+    <div class="message-status">
+      <% if complaint.response_solved == true %>
+        <p class="solved">Solved</p>
+      <% else %>
+        <p class="unsolved">Unsolved</p>
+      <% end %>
+    </div>
   </div>
+  <% end %>
+</div>
 
