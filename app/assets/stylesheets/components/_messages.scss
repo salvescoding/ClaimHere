@@ -12,6 +12,10 @@
     width: 100%;
     height: 100%;
   }
+  @media screen and (max-width: $small) {
+    height: 150px;
+    overflow-y: auto;
+  }
 }
 
 .stars {
@@ -99,6 +103,9 @@
   align-items: center;
   padding: 15px;
   border-bottom: 0.5px solid rgba(220,224,244,0.4);
+  @media screen and (max-width: $small) {
+
+  }
 }
 .message-status-button {
   display: flex;
@@ -134,9 +141,9 @@
     margin-left: 5px;
   }
   p {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: lighter;
-    opacity: 0.6;
+    opacity: 0.8;
     margin-top: 5px;
   }
 }
@@ -153,12 +160,14 @@
     color: rgba(0,0,0,0.9);
     color: rgba(0,0,0,0.9);
   }
+  p {
+    margin: 6px 0;
+    font-size: 15px;
+    letter-spacing: 0.8px;
+  }
 
 }
 
-.message-body p {
-  margin: 6px 0;
-}
 .message-status {
   font-size: 14px;
   font-weight: bold;
