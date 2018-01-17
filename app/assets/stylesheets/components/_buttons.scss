@@ -54,8 +54,10 @@
   display: block;
 }
 
-
-
+.complaint-button {
+  margin-bottom: 50px;
+  width: 100%;
+}
  .btn-complaint {
 
 // background: #cb2d3e;  /* fallback for old browsers */
@@ -81,10 +83,6 @@
   background-position: right center;
 }
 
-.complaint-button {
-  margin-bottom: 50px;
-  width: 100%;
-}
 .fa-bullhorn {
   margin-right: 10px;
 }

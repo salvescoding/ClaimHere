@@ -9,3 +9,4 @@
 
 console.log('Hello World from Webpacker')
 import "./autocomplete"
+import "./company_show_charts"
