@@ -54,8 +54,10 @@
   display: block;
 }
 
-
-
+.complaint-button {
+  margin-bottom: 50px;
+  width: 100%;
+}
  .btn-complaint {
   background-image: linear-gradient(to left,  #ef473a 0%, #cb2d3e 100%);
   transition: 0.4s;
@@ -76,10 +78,6 @@
   background-position: right center;
 }
 
-.complaint-button {
-  margin-bottom: 50px;
-  width: 100%;
-}
 .fa-bullhorn {
   margin-right: 10px;
 }

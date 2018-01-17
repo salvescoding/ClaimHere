@@ -1,18 +1,3 @@
-.stars-wrapper {
-  display: flex;
-  flex-direction: row;
-}
-.wrapper-customerchart {
-
-}
-.wrapper-claimschart {
-
-}
-.companycharts {
-  justify-content: space-between;
-
-}
-
 .charts-container {
   height: 704px;
   background-color: white;
@@ -25,6 +10,9 @@
   margin: 14px 0px;
   box-shadow: 0 0px 5px rgba(1,1,1,0.3);
 }
-.chart-padding {
+.wrapper-chart {
   padding: 30px;
+  width: 330px;
+  height: 330px
+
 }

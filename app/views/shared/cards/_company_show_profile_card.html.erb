@@ -1,8 +1,9 @@
-<div class="profile-card">
-  <div class="text-center comp-emoji">
+<div class="company-profile-card">
+  <div class="text-center company-emoji">
     <h3><%= @company.name %></h3>
       <% if @company.logo %>
       <a href="https://www.<%= @company.domain %>" target="_blank">
+      <!-- avatar-show class in _avatar.scss -->
       <img src="<%= image_path(@company.logo)%>" class="avatar-show" alt="logo">
       </a>
       <% end %>
