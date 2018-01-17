@@ -1,34 +1,29 @@
 
 <% if !@complaints.empty? %>
 
-<div class="banner-tiny" style="background-image:url('<%= image_path "banner-background.jpeg" %>');"></div>
+<div class="company-show-banner"></div>
 
 <div class="padding-negative">
-
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <%= render partial: 'shared/cards/profile_company_card' %>
+        <%= render partial: 'shared/cards/company_show_profile' %>
       </div>
-      <div class="col-lg-8 companycharts">
-        <%= render partial: 'shared/chartcompany' %>
-
+      <div class="col-xs-12 col-sm-8">
+        <%= render partial: 'shared/company_show_charts' %>
       </div>
     </div>
-    <div class="row last-complaints-company">
-      <div class="col-lg-12">
-        <div class="row">
-        <h3 class="text-center">Last Complaints for <%= @company.name %></h3>
-          <div class="section2">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <h3 class="text-center last-complaints-company">Last Complaints for <%= @company.name %></h3>
             <% @complaints = @complaints.order(created_at: :desc) %>
             <% @complaints.each do |complaint| %>
               <%= render partial: 'shared/messages', locals: { complaint: complaint } %>
             <% end %>
-          </div>
+
           <div class="pagination-container">
             <%= will_paginate @complaints %>
           </div>
-        </div>
       </div>
     </div>
   </div>
