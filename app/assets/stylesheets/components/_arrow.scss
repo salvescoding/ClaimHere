@@ -15,7 +15,7 @@
   border-right: 2px #fff solid;
   border-bottom: 2px #fff solid;
   @media screen and (max-width: $small) {
-    top: 130%;
+    top: 125%;
   }
 }
 
@@ -37,7 +37,7 @@
 
 @keyframes arrow {
   0% {
-    opacity: 0;
+    opacity: 0.1;
     transform: translate(-10px, -10px);
   }
   100% {
