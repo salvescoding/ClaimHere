@@ -5,15 +5,17 @@
       span, em {
         background-color: lightgrey;
         color: white;
-        padding: 8px;
+        padding: 5px;
         border-radius: 5px;
+        font-size: 14px;
       }
       a {
         background-color: #3E749D;
         opacity: 0.8;
         color: white;
-        padding: 8px;
+        padding: 5px;
         border-radius: 5px;
+        font-size: 14px;
         &:hover {
           text-decoration: none;
           opacity: 1;

@@ -10,6 +10,10 @@ input:focus {
   color: black;
   margin: 0 auto;
   font-size: 15px;
+  background: #E6E6E6;
+  &:focus {
+    background: white;
+  }
 }
 
 
