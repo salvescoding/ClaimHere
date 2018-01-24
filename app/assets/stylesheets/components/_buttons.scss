@@ -1,8 +1,4 @@
  .btn-home {
-  /*background: #2c3e50;   fallback for old browsers */
- /*background: -webkit-linear-gradient(to right, #3498db, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
- /*background: linear-gradient(to right, #3498db, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  /*background-image: linear-gradient(to left,  #3498db 0%, #3f5973, 100%);*/
   transition: 0.4s;
   padding: 10px 20px;
   margin: 10px;
@@ -24,9 +20,6 @@
 }
 
 .btn-claim {
-  /*background: #2c3e50;   fallback for old browsers */
- /*background: -webkit-linear-gradient(to right, #3498db, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
- /*background: linear-gradient(to right, #3498db, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-image: linear-gradient(to left,  #3498db 0%, #3f5973 100%);
   transition: 0.4s;
   padding: 10px 20px;
