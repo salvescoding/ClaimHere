@@ -1,9 +1,9 @@
-<div style="background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/witewall_3.png)
-);">
-<div class="container container-complaint">
-  <div class="complaint-new-page padding">
+
+<div class="container">
+  <div class="complaint-new-wrapper">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
         <%= simple_form_for [@company, @complaint] do |f| %>
           <%= f.input :title %>
           <%= f.input :description, as: :text %>
@@ -25,4 +25,4 @@
     </div>
   </div>
 </div>
-</div>
+

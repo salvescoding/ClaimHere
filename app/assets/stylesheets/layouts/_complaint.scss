@@ -1,17 +1,29 @@
-.complaint-show-page {
+//Complaint/new page classes
+
+.complaints-new {
+  background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/witewall_3.png)
+}
+
+.complaint-new-wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  height: 100vh;
+}
+
+
+//Complaint/show page classes
+
+.complaints-show {
+  background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/witewall_3.png)
+}
+
+.complaint-show-wrapper {
   margin-top: 150px;
   height: 100vh;
 }
 
+// No la encuentro en ningun sitio pero si la borro cambia la response box
 #complaint_response {
   border-radius: 10px;
 }
 
-.complaint-new-page {
-  margin-top: 80px;
-  height: 100vh;
-}
-.padding {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
