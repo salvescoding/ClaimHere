@@ -1,7 +1,7 @@
 .messages-show-company {
   margin: 10px 0px;
   border: 0.5px solid lightgrey;
-  border-radius: 50px;
+  border-radius: 20px;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background-color: white;
   height: 130px;
@@ -42,8 +42,8 @@
 
 .message-body-profile {
   flex-grow: 1;
-  font-size: 15px;
-  color: rgba(0,0,0,0.4);
+  font-size: 14px;
+  color: rgba(0,0,0,0.8);
   text-align: justify;
   padding-right: 20px;
   padding-left: 20px;
@@ -52,10 +52,7 @@
     text-decoration: none;
     color: #3f5b76;
   }
-  strong{
-    color: rgba(0,0,0,0.9);
-    color: rgba(0,0,0,0.9);
-  }
+
 }
 
 .message-description-profile {
@@ -152,17 +149,13 @@
   flex-grow: 1;
   font-size: 14px;
   padding-left: 20px;
-  color: rgba(0,0,0,0.4);
+  color: rgba(0,0,0,0.7);
   text-align: justify;
   padding-right: 20px;
 
-  strong {
-    color: rgba(0,0,0,0.9);
-    color: rgba(0,0,0,0.9);
-  }
   p {
     margin: 6px 0;
-    font-size: 15px;
+    font-size: 14px;
     letter-spacing: 0.8px;
   }
 

@@ -1,4 +1,4 @@
-
+<!-- Homepage banner -->
 <div class="banner">
   <div class="banner-content">
       <div class="row">
@@ -10,33 +10,13 @@
 </div>
 
 
-<div class="container cardcontainer howto-container">
-  <h2>How to</h2>
-    <div class="row row-howto">
-    <div class="cardbox howto">
-      <div class="steps-howto col-xs-12 col-sm-10 col-sm-offset-1">
-      <i class="fa fa-search fa-2x" aria-hidden="true"></i>
-      <h4>Search for a company</h4>
-      <p>Search the company you are interested in and check their reputation.</p>
-      </div>
-      <div class="steps-howto col-xs-12 col-sm-10 col-sm-offset-1">
-      <%= image_tag("howto-claim.svg", width: '50') %>
-      <h4>Post a complaint</h4>
-      <p>Explain your problem and the ways you tried to solve it. The more we are the more power we hace as consumers.</p>
-      </div>
-      <div class="steps-howto col-xs-12 col-sm-10 col-sm-offset-1">
-        <%= image_tag("howto-reply.svg", width: '50') %>
-      <h4>Receive a reply</h4>
-      <p>Wait for the company to read your complaint and offer a solution.</p>
-      </div>
-      <div class="steps-howto col-xs-12 col-sm-10 col-sm-offset-1">
-      <%= image_tag("howto-rating.svg", width: '50') %>
-      <h4>Solve and rate it</h4>
-      <p>Rate if your issue was solved in a helpul way and mark your complaint as solved.</p>
-      </div>
-    </div>
-  </div>
+<!-- How to section -->
+<div class="wraper-howto">
+  <%= render partial: "shared/how-to-home" %>
 </div>
+
+
+<!-- Last complaints section -->
 <div class="last-complaints-container">
   <div class="container">
     <h2>Last complaints</h2>
