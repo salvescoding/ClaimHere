@@ -1,50 +1,49 @@
-  <div style="background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/witewall_3.png
-);">
+<div class="container">
+  <div class="complaint-show-wrapper">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
-    <div class="container">
-      <div class="complaint-show-page">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-          <div class="message message-show">
-            <% if @complaint.company_rating == 1 %>
-            <%= image_tag("angry", width: '60' )  %>
-            <% elsif @complaint.company_rating == 2 %>
-            <%= image_tag("crying", width: '60') %>
-            <% elsif @complaint.company_rating == 3 %>
-            <%= image_tag("Ok", width: '60') %>
-            <% elsif @complaint.company_rating == 4 %>
-            <%= image_tag("Good", width: '60') %>
-            <% elsif @complaint.company_rating == 5 %>
-            <%= image_tag("InLove", width: '60') %>
-            <% else %>
-            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-            <% end %>
-            <div class="message-name">
-              <h4>
-                <% if @complaint.company_rating %>
-                Rating: <strong><%= @complaint.company_rating %></strong>
-                <% end %>
-              </h4>
-              <p>
-                <%= @complaint.created_at.strftime("%d-%m-%Y") %>
-              </p>
-            </div>
-            <div class="message-body">
-              <p class="message-title">
-                <strong>
-                  <%= link_to @complaint.company.name, company_path(@complaint.company) %>
+        <div class="message message-show">
+          <% if @complaint.company_rating == 1 %>
+          <%= image_tag("angry", width: '60' )  %>
+          <% elsif @complaint.company_rating == 2 %>
+          <%= image_tag("crying", width: '60') %>
+          <% elsif @complaint.company_rating == 3 %>
+          <%= image_tag("Ok", width: '60') %>
+          <% elsif @complaint.company_rating == 4 %>
+          <%= image_tag("Good", width: '60') %>
+          <% elsif @complaint.company_rating == 5 %>
+          <%= image_tag("InLove", width: '60') %>
+          <% else %>
+          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+          <% end %>
+          <div class="message-name">
+            <h4>
+              <% if @complaint.company_rating %>
+              Rating: <strong><%= @complaint.company_rating %></strong>
+              <% end %>
+            </h4>
+            <p>
+              <%= @complaint.created_at.strftime("%d-%m-%Y") %>
+            </p>
+          </div>
+          <div class="message-body">
+            <p class="message-title">
+              <strong>
+                <%= link_to @complaint.company.name, company_path(@complaint.company) %>
 
-                </strong>
-              </p>
-              <%= @complaint.description %>
+              </strong>
+            </p>
+            <p>
+            <%= @complaint.description %>
             </p>
           </div>
           <div class="message-status">
-            <% if @complaint.response_solved == true %>
-              <p class="solved">Solved</p>
-            <% else %>
-              <p class="unsolved">Unsolved</p>
-            <% end %>
+          <% if @complaint.response_solved == true %>
+          <p class="solved">Solved</p>
+          <% else %>
+          <p class="unsolved">Unsolved</p>
+          <% end %>
           </div>
         </div>
         <div class="message-title">
@@ -54,16 +53,15 @@
             <%= @complaint.response %>
           </div>
         </div>
-        <% else %>
-        <%=  simple_form_for @complaint do |f| %>
-        <%= f.input :response, as: :text %>
-        <%= f.button :submit, class: "btn-claim btn-full btn-message-show" %>
-        <% end %>
-        <% end %>
+          <% else %>
+          <%=  simple_form_for @complaint do |f| %>
+          <%= f.input :response, as: :text %>
+          <%= f.button :submit, class: "btn-claim btn-full btn-message-show" %>
+          <% end %>
+          <% end %>
       </div>
     </div>
   </div>
-
-  </div>
 </div>
+
 

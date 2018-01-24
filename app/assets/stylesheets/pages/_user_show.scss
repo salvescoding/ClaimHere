@@ -1,6 +1,18 @@
-// only used in user-show
-.section2 {
+.users-show {
+  background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/witewall_3.png)
+}
+
+.profile-wrapper {
+  padding-top: 40px;
+  margin-top: 80px;
+  padding-bottom: 100px;
+}
+
+.profile-right {
+  margin-left: 50px;
   width: 100%;
-  // height: 610px;
-  // overflow: scroll;
+}
+
+.profile-no-complaints {
+  margin: 270px;
 }
