@@ -1,4 +1,4 @@
-<div class="messages-show-company">
+<div class="messages-profile">
   <div class="message">
     <div class="message-header">
     <%= link_to complaint.company.name, company_path(complaint.company), class: "message-company-name" %>
@@ -25,7 +25,7 @@
       <%= truncate complaint.description.capitalize, length: 150 %>
     </p>
   <% end %>
-  <div class="message-status-button">
+  <div class="message-status-profile">
     <% if complaint.response_solved == false %>
     <h6 class="unsolved">Not solved</h6>
     <% else %>

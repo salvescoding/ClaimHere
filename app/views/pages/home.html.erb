@@ -3,7 +3,7 @@
   <div class="banner-content">
       <div class="row">
         <div class="col-xs-12">
-          <%= render partial: "shared/banner/banner_content" %>
+          <%= render partial: "shared/banner/banner_homepage" %>
         </div>
       </div>
   </div>
@@ -11,7 +11,7 @@
 
 
 <!-- How to section -->
-<div class="wraper-howto">
+<div class="wrapper-howto">
   <%= render partial: "shared/how-to-home" %>
 </div>
 
@@ -25,7 +25,7 @@
         <% @complaints = @complaints.order(created_at: :desc) %>
         <% @complaints.each do |complaint| %>
           <div class="col-xs-12 col-sm-12 col-md-6">
-            <%= render partial: "shared/messages", locals: { complaint: complaint } %>
+            <%= render partial: "shared/messages_homepage", locals: { complaint: complaint } %>
           </div>
         <% end %>
       </div>
