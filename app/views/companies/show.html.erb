@@ -18,7 +18,7 @@
         <h3 class="text-center last-complaints-company">Last Complaints for <%= @company.name %></h3>
             <% @complaints = @complaints.order(created_at: :desc) %>
             <% @complaints.each do |complaint| %>
-              <%= render partial: 'shared/messages', locals: { complaint: complaint } %>
+              <%= render partial: 'shared/messages_homepage', locals: { complaint: complaint } %>
             <% end %>
 
           <div class="pagination-container">

@@ -18,83 +18,10 @@
   }
 }
 
-.stars {
-  display: flex;
-  button {
-    border: none;
-    background-color: transparent;
-    transform: scale(1) rotate(0deg);
-    transition: transform 200ms ease;
-    &:hover {
-      transform: scale(1.2) rotate(10deg);
-    }
-    &:active {
-      transform: scale(2) rotate(360deg);
-    }
-    &:focus {
-      outline: none;
-    }
-    .fa-star {
-      color: gold;
-    }
-  }
-}
-
-.message-body-profile {
-  flex-grow: 1;
-  font-size: 14px;
-  color: rgba(0,0,0,0.8);
-  text-align: justify;
-  padding-right: 20px;
-  padding-left: 20px;
-
-   &:hover {
-    text-decoration: none;
-    color: #3f5b76;
-  }
-
-}
-
-.message-description-profile {
-  font-size: 15px;
-  padding: 5px;
-  text-align: left;
-}
-
-
-.message-title-profile {
-  font-size: 16;
-}
-
-.message-header {
-  padding: 20px 25px;
-  display: flex;
-  justify-content: column;
-  flex-direction: column;
-  align-items: center;
-  img {
-    width: 20px;
-  }
-}
-
-.rate-response {
-  text-align: right;
-}
-
-.message-company-name {
-  text-decoration: none;
-  color: #3f5b76;
-  padding: 7px;
-  font-size: 15px;
-}
-
-.mark-button .btn-complaint {
-  margin-right: 0;
-}
-
 .test:hover {
   text-decoration: none;
 }
+
 .message {
   display: flex;
   align-items: center;
@@ -104,25 +31,11 @@
 
   }
 }
-.message-status-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  p {
-    font-size: 12px;
-  }
-}
-.message-show {
-  flex-direction: column;
-  background-color: white;
-  box-shadow: 0px 0px 4px rgba(1,1,1,0.3);
-  margin: 20px 0;
-  border-radius: 10px;
 
-}
 .message:last-child {
   border-bottom: none;
 }
+
 .message-name {
   padding-left: 10px;
   min-width: 100px;
@@ -161,6 +74,14 @@
 
 }
 
+.message-title {
+  font-size: 14px;
+  a {
+    text-decoration: none;
+    color: #3f5b76;
+  }
+}
+
 .message-status {
   font-size: 14px;
   font-weight: bold;
@@ -175,16 +96,21 @@
 .status.pending {
   color: lightgrey;
 }
-.message-title {
-  font-size: 14px;
-  a {
-    text-decoration: none;
-    color: #3f5b76;
-  }
-}
-.message-status-button {
+
+
+
+
+//Las siguientes clases no deberian estar aqui
+
+.message-show {
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0px 0px 4px rgba(1,1,1,0.3);
+  margin: 20px 0;
+  border-radius: 10px;
 
 }
+
 .complaints-new {
   background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/witewall_3.png)
 

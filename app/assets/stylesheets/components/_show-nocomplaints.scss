@@ -8,17 +8,9 @@
 //   box-shadow: 0 10px 6px -6px #777;
 // }
 
-// .cool-bottom {
-
-
-//   padding: 10px;
-// }
-
-.banner-gradient {
-
-}
 
 .banner-stuck {
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(background.gif);
   width: 80vw;
   height: 70vh;
   background-size: cover;
@@ -33,7 +25,8 @@
 .no-complaints {
       margin-top: 50px;
   .header-container {
-        display: flex;
+    padding-top: 100px;
+    display: flex;
     justify-content: center;
     h2 {
           color: white;
