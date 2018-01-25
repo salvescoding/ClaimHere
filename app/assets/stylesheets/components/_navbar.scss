@@ -88,10 +88,30 @@
   text-decoration: none;
 }
 
-.navbar-wagon-link-home {
-  color: #3D78A3;
+
+/* Login button Home*/
+.navbar-home-login {
+  color: white;
   opacity: 1;
-  border: 1px solid white;
+  border: 2px solid white;
+  font-size: 15px;
+  border-radius: 5px;
+  background: transparent;
+  padding: 5px 10px;
+  margin: 0 10px;
+  &:hover {
+    color: #3B8CC5;
+    opacity: 1;
+    font-size: 15px;
+    text-decoration: none;
+    background: white;
+  }
+}
+/* Sign Up button Home */
+.navbar-home-signup {
+  color: #3B8CC5;
+  opacity: 1;
+  border: 2px solid white;
   font-size: 15px;
   border-radius: 5px;
   background: white;
@@ -102,9 +122,10 @@
     opacity: 1;
     font-size: 15px;
     text-decoration: none;
-    background: #3D78A3;
+    background: transparent;
   }
 }
+
 
 
 /* Dropdown menu */
