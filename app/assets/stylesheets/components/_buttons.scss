@@ -20,22 +20,25 @@
 }
 
 .btn-claim {
-  background-image: linear-gradient(to left,  #3498db 0%, #3f5973 100%);
-  transition: 0.4s;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 40px;
+  background: #3C89C0;
+  padding: 8px;
+  border-radius: 10px;
   text-decoration: none;
-  box-shadow: 0 0 20px #eee;
+  color: white;
+  font-size: 15px;
   text-align: center;
-  flex: 1 1 auto;
-  color: white;
-  background-size: 200% auto;
+  margin: 8px 0;
+  &:hover {
+    color: #3C89C0;
+    text-decoration: none;
+    background: white;
+    border: 1px solid white;
+  }
 }
-.btn-claim:hover {
-  color: white;
-  text-decoration: none;
-  background-position: right center;
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
 }
 
 .btn-full {
@@ -94,3 +97,4 @@
   text-decoration: none;
   background-position: right center;
 }
+
