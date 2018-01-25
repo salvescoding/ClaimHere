@@ -109,7 +109,7 @@ var ctx = document.getElementById("myRatingChart").getContext('2d');
     data: {
       labels: ["1", "2", "3", "4", "5"],
       datasets: [{
-        label: '# of Stars',
+        label: 'Rating of the solution',
         data: [<%= @company.complaints.where(response_rating: 1).count %>, <%= @company.complaints.where(response_rating: 2).count %>, <%= @company.complaints.where(response_rating: 3).count %>, <%= @company.complaints.where(response_rating: 4).count %>, <%= @company.complaints.where(response_rating: 5).count %>],
         backgroundColor: [
         "#1f5b83",
