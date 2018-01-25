@@ -1,6 +1,6 @@
 @keyframes cursor {
   from, to { border-color: transparent; }
-  50% { border-color: lightgrey; }
+  50% { border-color: #3D7EAC; }
 }
 
 @keyframes typing {
@@ -11,6 +11,13 @@
 @keyframes slide {
   #{100% / $slides} { font-size: $slider-font-size; letter-spacing: 3px; }
   to { font-size: 0; letter-spacing: 0; }
+}
+
+@media screen and (max-width: $xtrasmall) {
+  @keyframes slide {
+  #{100% / $slides} { font-size: $slider-font-size-small; letter-spacing: 3px; }
+  to { font-size: 0; letter-spacing: 0; }
+}
 }
 
 .#{$slider-name} {
@@ -34,7 +41,6 @@
   right: 0;
   bottom: 0;
   border-left: 3px solid black;
-
   background-image: linear-gradient(to right, #3E7097 0%, #3D7EAC 100%);
   animation: typing $typing-duration infinite,
              cursor 1s infinite;
