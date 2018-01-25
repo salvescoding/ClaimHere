@@ -22,7 +22,7 @@ input:focus {
   overflow-x: hidden;
   top: 100%;
   background-color: white;
-  padding: 5px;
+  padding: 2px;
   width: 100%;
   margin: 0 auto;
   text-align: left;
@@ -38,7 +38,6 @@ input:focus {
 
   li {
     list-style-type: none;
-    border-bottom: 0.2px solid lightgrey;
     font-size: 15px;
     &:hover {
       background-color: whitesmoke;

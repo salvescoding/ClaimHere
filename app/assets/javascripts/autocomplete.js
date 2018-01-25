@@ -8,7 +8,7 @@ function attachEvents() {
 
     searchInput.addEventListener('keyup', search);
     searchInput.addEventListener('focus', search);
-    searchInput.addEventListener('blur',  () => {setTimeout(clear, 500) });
+    searchInput.addEventListener('blur',  () => {setTimeout(clear, 200) });
 
 }
 
