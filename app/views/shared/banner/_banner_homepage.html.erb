@@ -1,6 +1,6 @@
 <div class="ban-content">
   <div class="wrapper-title">
-    <h1 class="title-home">ClaimHere</h1>
+    <h1>ClaimHere</h1>
     <div class="typing-slider">
       <p>Search for a company</p>
       <p>Check companies reputation </p>
@@ -8,8 +8,14 @@
     </div>
   </div>
   <div class="have-a-voice">
-    <%= image_tag("claim-icon.svg", class: "img-claim") %>
-    <h2 class="slogan">Have a voice</h2>
+    <div class="home-icon">
+      <%= image_tag("claim-icon.svg", class: "img-claim") %>
+    </div>
+    <div class="cta-home">
+      <h2>Have a voice</h2>
+      <% unless current_user %>
+        <%= link_to "Join Us Now", new_user_registration_path, class: "navbar-wagon-item navbar-home-signup" %>
+      <% end %>
+    </div>
   </div>
 </div>
-<div class="arrow"></div>

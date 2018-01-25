@@ -7,6 +7,7 @@
         </div>
       </div>
   </div>
+  <div class="arrow"></div>
 </div>
 
 
@@ -19,7 +20,7 @@
 <!-- Last complaints section -->
 <div class="last-complaints-container">
   <div class="container">
-    <h2>Last complaints</h2>
+    <h2>Latest complaints</h2>
     <div class="row">
       <div>
         <% @complaints = @complaints.order(created_at: :desc) %>
