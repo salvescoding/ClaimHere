@@ -13,14 +13,8 @@
   border: none;
 }
 
-.btn-home:hover {
-  color: #99cbed;
-  text-decoration: none;
-  background-position: right center;
-}
-
 .btn-claim {
-  background: #3C89C0;
+  background: $brand-primary;
   padding: 8px;
   border-radius: 10px;
   text-decoration: none;
@@ -29,7 +23,24 @@
   text-align: center;
   margin: 8px 0;
   &:hover {
-    color: #3C89C0;
+    color: $brand-primary;
+    text-decoration: none;
+    background: white;
+    border: 1px solid white;
+  }
+}
+
+.btn-facebook {
+  background: $brand-facebook;
+  padding: 8px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  margin: 8px 0;
+  &:hover {
+    color: $brand-facebook;
     text-decoration: none;
     background: white;
     border: 1px solid white;

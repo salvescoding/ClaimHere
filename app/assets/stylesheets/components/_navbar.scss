@@ -64,18 +64,17 @@
 .navbar-wagon-link {
   color: white;
   font-size: 15px;
-  opacity: 1;
-  border: 1px solid white;
-  background: #3D78A3;
+  border: 2px solid white;
+  background: $brand-primary;
   padding: 5px 10px;
   margin: 0 10px;
   border-radius: 5px;
   &:hover {
-    color: #3D78A3;
-    opacity: 1;
+    color: $brand-primary;
     font-size: 15px;
     text-decoration: none;
     background: white;
+
   }
 }
 
