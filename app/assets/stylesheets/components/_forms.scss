@@ -8,3 +8,22 @@ input:focus {
   justify-content: center;
   text-align: center;
 }
+
+#user_email, #user_password, #user_password_confirmation {
+  font-size: 14px;
+}
+
+.help-block {
+  font-size: 14px;
+}
+
+.checkbox label {
+ font-size: 14px;
+}
+
+.forgot-password {
+  font-size: 14px;
+  &:hover {
+    text-decoration: none;
+  }
+}

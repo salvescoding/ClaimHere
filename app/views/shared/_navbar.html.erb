@@ -11,12 +11,14 @@
     <%= image_tag "unity.png", height: 40 %>
     <% end %>
     <% end %>
+    <% if (params[:controller] == "companies" && params[:action] == "show") || (params[:controller] == "pages" && params[:action] == "home") || (params[:controller] == "users" && params[:action] == "show") %>
     <div class="search-nav inner-addon right-addon">
       <i class="glyphicon glyphicon-search"></i>
       <input type="text" name="query" id="form-search" placeholder="Search" autocomplete="off">
       <ul class="results-dropdown results-dropdown-transparent" id="results">
       </ul>
     </div>
+    <% end %>
 
 
 
