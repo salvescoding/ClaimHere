@@ -10,15 +10,17 @@
         font-size: 14px;
       }
       a {
-        background-color: #3E749D;
-        opacity: 0.8;
+        background-color: $brand-primary;
         color: white;
         padding: 5px;
         border-radius: 5px;
         font-size: 14px;
+        border: 1px solid $brand-primary;
         &:hover {
           text-decoration: none;
-          opacity: 1;
+          color: $brand-primary;
+          background: white;
+          border: 1px solid $brand-primary;
         }
       }
     }
