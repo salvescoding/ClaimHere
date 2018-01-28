@@ -1,13 +1,10 @@
 #form-search {
-  padding: 7px;
+  padding: 7px 35px;
   width: 100%;
   color: black;
   margin: 0 auto;
   font-size: 15px;
   background: white;
-  &:focus {
-    background: white;
-  }
 }
 
 .results-dropdown {
@@ -78,7 +75,7 @@
 }
 
 /* align glyph */
-.right-addon .glyphicon { right: 0px;}
+.right-addon .glyphicon { left: 0px;}
 
 /* add padding  */
 .right-addon input { padding-right: 30px; }
