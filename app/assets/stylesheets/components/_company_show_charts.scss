@@ -9,9 +9,14 @@
   margin: 14px 0px;
   box-shadow: 0 0px 5px rgba(1,1,1,0.3);
 }
+
 .wrapper-chart {
   padding: 30px;
   width: 330px;
-  height: 330px
+  height: 330px;
 
+   @media screen and (max-width: $small) {
+    width: 260px;
+    height: 260px;
+  }
 }
