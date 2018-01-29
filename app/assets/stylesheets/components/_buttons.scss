@@ -84,7 +84,6 @@
   text-decoration: none;
   background-position: right center;
 }
-
 .fa-bullhorn {
   margin-right: 10px;
 }
@@ -102,6 +101,9 @@
   color: white;
   background-size: 200% auto;
   font-size: 12px;
+    @media screen and (max-width: $small) {
+    font-size: 8px;
+  }
 }
 .btn-claim-profile:hover {
   color: white;

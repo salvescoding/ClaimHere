@@ -21,7 +21,7 @@
   padding: 15px;
   border-bottom: 0.5px solid rgba(220,224,244,0.4);
   @media screen and (max-width: $small) {
-
+  padding: 10px;
   }
 }
 
@@ -34,6 +34,9 @@
   img {
     width: 20px;
   }
+    @media screen and (max-width: $small) {
+    padding: 10px 13px;
+  }
 }
 
 .message-company-name {
@@ -41,6 +44,10 @@
   color: #3f5b76;
   padding: 7px;
   font-size: 15px;
+    @media screen and (max-width: $small) {
+    font-size: 10px;
+    padding: 4px;
+  }
 }
 
 .message-body-profile {
@@ -55,16 +62,30 @@
     text-decoration: none;
     color: #3f5b76;
   }
+    @media screen and (max-width: $small) {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
 }
 
 .message-title-profile {
-  font-size: 16;
+  font-size: 16px;
+
+    @media screen and (max-width: $small) {
+    font-size: 12px;
+  }
 }
 
 .message-description-profile {
   font-size: 15px;
   padding: 5px;
   text-align: left;
+
+    @media screen and (max-width: $small) {
+    font-size: 10px;
+    padding: 3px;
+  }
 }
 
 .message-status-profile {
@@ -73,6 +94,15 @@
   align-items: center;
   p {
     font-size: 12px;
+      @media screen and (max-width: $small) {
+      font-size: 8px;
+      }
+  }
+  h6 {
+    font-size: 12px;
+    @media screen and (max-width: $small) {
+    font-size: 8px;
+  }
   }
 }
 
