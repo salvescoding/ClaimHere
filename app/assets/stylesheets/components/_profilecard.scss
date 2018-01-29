@@ -9,6 +9,10 @@
     background-color: white;
     height: 704px;
     width: 310px;
+  @media screen and (max-width: $small) {
+    align-content: center;
+    height: 584px;
+  }
   h2 {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -17,4 +21,3 @@
 .profile-info {
   margin: 30px 30px;
 }
-

@@ -10,10 +10,9 @@
 
   @media screen and (max-width: $small) {
     align-content: center;
+    height: 624px;
   }
-  @media screen and (max-width: $xtrasmall) {
-    align-content: center;
-  }
+
   h3 {
   margin-top: 10px;
   }

@@ -17,9 +17,13 @@
   margin-top: -150px;
   margin-bottom: 80px;
 }
+.profile-left {
+   @media screen and (max-width: $medium) {
+  margin-left: 40px;
+  }
+}
 
 .profile-right {
-  margin-left: 50px;
   width: 100%;
 }
 

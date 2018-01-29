@@ -3,29 +3,28 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-sm-3 col-xs-12">
+      <div class="col-md-3 col-sm-3 col-xs-12 profile-left">
         <%= render partial: 'shared/cards/profile_card' %>
       </div>
-
-      <div class="row">
-        <div class="col-sm-8 col-xs-12">
-          <div class="profile-right">
-            <% if @complaints != []%>
-              <% @complaints.each do |complaint| %>
-                <div class="col-xs-12">
-                  <%= render partial: "shared/messages_profile", locals: { complaint: complaint } %>
-                </div>
-              <% end %>
-            <% else %>
-              <div class="profile-no-complaints">
-                <div class="col-sm-6">
-                   <p>You haven't submitted any complaints yet</p>
-                </div>
+      <div class="col-md-1 col-sm-1"></div>
+      <div class="col-md-8 col-sm-12">
+        <div class="profile-right">
+          <% if @complaints != []%>
+            <% @complaints.each do |complaint| %>
+              <div class="col-sm-12 col-xs-12">
+                <%= render partial: "shared/messages_profile", locals: { complaint: complaint } %>
               </div>
             <% end %>
-          </div>
+          <% else %>
+            <div class="profile-no-complaints">
+              <div class="col-sm-6">
+                 <p>You haven't submitted any complaints yet</p>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
+
 
     </div>
      <div class="pagination-container">
